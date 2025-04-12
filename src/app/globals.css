@@ -11,7 +11,23 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Tambahkan ini untuk smooth scroll */
+html {
+  scroll-behavior: smooth;
+  /* Opsi: tambahkan sedikit padding atas agar header tidak menutupi judul section */
+  /* Sesuaikan nilai '6rem' atau '80px' sesuai tinggi header Anda */
+  scroll-padding-top: 6rem;
+}
+
+/* Style dasar lainnya bisa ditambahkan di sini */
+body {
+  @apply antialiased; /* Contoh: membuat font lebih halus */
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
