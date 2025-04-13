@@ -61,13 +61,13 @@ const TeamSection = () => {
 
                 {/* Foto Individu (Bulat & Hitam Putih) */}
                 {/* 'flex-shrink-0' agar ukuran tetap */}
-                <div className="flex-shrink-0 w-50 h-50 sm:w-50 sm:h-50 rounded-full overflow-hidden shadow-md relative"> {/* Ukuran foto, Bulat, Overflow Hidden */}
+                <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden shadow-md relative"> {/* Ukuran foto, Bulat, Overflow Hidden */}
                   <Image
                     src={member.imageSrc}
                     alt={member.altText}
                     layout="fill" // Gunakan layout fill agar pas dengan div bulat
-                    objectFit="cover" // Pastikan gambar menutupi area
-                    className="filter grayscale" // Efek hitam putih
+                    //objectFit="cover" // Pastikan gambar menutupi area
+                    className="object-cover filter grayscale" // Efek hitam putih
                   />
                 </div>
 
