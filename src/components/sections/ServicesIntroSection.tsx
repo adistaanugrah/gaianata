@@ -72,7 +72,7 @@ const ServicesIntroSection = () => {
              {/* Tombol ini bisa mengarah ke section portfolio */}
              <Link href="#portfolio" className="mt-6 inline-block">
                 <button
-                  className="bg-brand-purple text-white px-8 py-3 rounded uppercase text-sm tracking-wider font-semibold hover:bg-brand-purple-dark transition duration-300"
+                  className="inline-block bg-purple-800 text-white px-8 py-3 rounded uppercase text-sm tracking-wider font-semibold hover:bg-purple-900 transition duration-300"
                 >
                    explore our services
                 </button>

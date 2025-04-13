@@ -4,79 +4,55 @@ import { FaPinterestP, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const Header = () => {
   return (
-    // Kurangi padding vertikal (py-4)
+    // Padding horizontal: px-4 (mobile) mungkin sudah cukup, sm:px-6, lg:px-8 untuk layar lebih besar
     <header className="sticky top-0 z-50 bg-white shadow-md py-4 px-4 sm:px-6 lg:px-8">
+      {/* Ganti justify-between dengan flex-wrap jika perlu di layar sangat kecil,
+          tapi biasanya justify-between cukup */}
       <div className="container mx-auto flex justify-between items-center">
 
-        {/* Grup Navigasi Kiri (Sesuaikan spacing) */}
-        <nav>
-          <ul className="flex space-x-5 md:space-x-5 text-xs sm:text-sm uppercase tracking-wider text-gray-600"> {/* Ubah ke space-x-5 */}
+        {/* Grup Navigasi Kiri */}
+        <nav className="flex-1 min-w-0"> {/* Tambah flex-1 dan min-w-0 agar bisa mengecil */}
+          {/* Kurangi space-x di mobile jika perlu */}
+          <ul className="flex space-x-3 sm:space-x-4 text-xs sm:text-sm uppercase tracking-wider text-gray-600 justify-start"> {/* space-x-3, justify-start */}
             <li><Link href="#home" className="hover:text-purple-700">Home</Link></li>
             <li><Link href="#about-us" className="hover:text-purple-700">About Us</Link></li>
             <li><Link href="#our-service" className="hover:text-purple-700">Our Service</Link></li>
           </ul>
         </nav>
 
-        {/* Logo di Tengah (Perkecil ukuran) */}
-        <div className="mx-4 flex-shrink-0">
+        {/* Logo di Tengah */}
+        {/* Ukuran logo mungkin perlu dikecilkan lagi untuk mobile, tapi 100x50 mungkin oke */}
+        <div className="px-2 sm:px-4 flex-shrink-0 w-24 lg:w-40"> {/* Beri sedikit padding horizontal logo */}
           <Link href="/">
-            {/* Perkecil width/height logo */}
             <Image
-              src="/images/logo-gaia-nata3.png"
+              src="/images/logo-gaia-nata2.png"
               alt="Gaia Nata Logo"
-              width={500} // Kurangi dari 120
-              height={50}  // Kurangi dari 60
+              width={144} // Mungkin coba 80?
+              height={72}  // Mungkin coba 40? Sesuaikan rasio!
               className="h-auto"
               priority
             />
           </Link>
         </div>
 
-        {/* Grup Navigasi Kanan + Sosial Media (Sesuaikan spacing) */}
-        <div className="flex items-center space-x-5 md:space-x-5"> {/* Sesuaikan spacing jika perlu */}
-      <nav>
-        <ul className="flex space-x-5 md:space-x-5 text-xs sm:text-sm uppercase tracking-wider text-gray-600">
-          <li><Link href="#our-team" className="hover:text-purple-700">Our Team</Link></li>
-          <li><Link href="#contact" className="hover:text-purple-700">Our Contact</Link></li>
-        </ul>
-      </nav>
-
-      {/* === IKON SOSIAL MEDIA (Update di sini) === */}
-      <div className="flex space-x-3 sm:space-x-4 text-gray-600 items-center">
-        <a
-          href="https://id.pinterest.com/gainataslaras/" // <-- Ganti dengan URL Pinterest Anda
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Pinterest"
-          className="hover:text-purple-700 transition duration-300" // Terapkan hover color di <a>
-        >
-          <FaPinterestP size={18} /> {/* <-- Ganti 'P' dengan ikon */}
-        </a>
-        <a
-          href="https://instagram.com/gaianata" // <-- Ganti dengan URL Instagram Anda
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          className="hover:text-purple-700 transition duration-300"
-        >
-          <FaInstagram size={18} /> {/* <-- Ganti 'I' dengan ikon */}
-        </a>
-        <a
-          href="https://wa.me/6287785739449" // <-- Pastikan link WA benar
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="WhatsApp"
-          className="hover:text-purple-700 transition duration-300"
-        >
-          <FaWhatsapp size={18} /> {/* <-- Ganti 'W' dengan ikon */}
-        </a>
+        {/* Grup Navigasi Kanan + Sosial Media */}
+        <div className="flex flex-1 min-w-0 items-center justify-end space-x-3 sm:space-x-4"> {/* Tambah flex-1, min-w-0, justify-end */}
+          <nav>
+            <ul className="flex space-x-3 sm:space-x-4 text-xs sm:text-sm uppercase tracking-wider text-gray-600">
+              <li><Link href="#our-team" className="hover:text-purple-700">Our Team</Link></li>
+              <li><Link href="#contact" className="hover:text-purple-700">Our Contact</Link></li>
+            </ul>
+          </nav>
+          {/* Ikon Sosial Media */}
+          <div className="hidden sm:flex space-x-3 text-gray-600 items-center"> {/* Sembunyikan ikon di layar xs (opsional) */}
+            {/* ... ikon Anda ... */}
+             <a href="..." className="hover:text-purple-700 ..."><FaPinterestP size={16} /></a> {/* Perkecil ikon sedikit */}
+             <a href="..." className="hover:text-purple-700 ..."><FaInstagram size={16} /></a>
+             <a href="..." className="hover:text-purple-700 ..."><FaWhatsapp size={16} /></a>
+          </div>
+        </div>
       </div>
-      {/* === Akhir Ikon Sosial Media === */}
-
-    </div>
-
-  </div>
-</header>
+    </header>
   );
 };
 

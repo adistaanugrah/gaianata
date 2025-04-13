@@ -28,7 +28,7 @@ const HeroSection = () => {
       {/* 'flex items-center justify-center' -> menengahkan konten di dalam kolom */}
       {/* 'p-8 sm:p-12 md:p-16' -> padding */}
       {/* 'relative' untuk positioning quotes */}
-      <div className="w-full md:w-1/2 flex items-center justify-center p-8 sm:p-12 md:p-16 relative order-2 md:order-2">
+      <div className="w-full md:w-1/2 flex items-center justify-center p-8 sm:p-6 md:p-8 lg:p-12 relative order-2 md:order-2">
         {/* Container untuk konten teks agar mudah ditengahkan jika perlu */}
         <div className="text-center max-w-md relative"> {/* max-w-md membatasi lebar teks */}
 
@@ -43,7 +43,7 @@ const HeroSection = () => {
 
           {/* Judul Utama */}
           {/* Gunakan font-serif, ukuran teks responsif, warna teks */}
-          <h1 className="relative z-10 text-4xl sm:text-5xl md:text-6xl font-serif leading-tight mb-8 text-gray-800">
+          <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-serif leading-tight mb-8 sm:mb-10 text-gray-800">
             BESPOKE <br />
             IN EVERY <br />
             BLOOM, <br />
