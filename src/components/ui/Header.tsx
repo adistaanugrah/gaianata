@@ -46,9 +46,9 @@ const Header = () => {
           {/* Ikon Sosial Media */}
           <div className="hidden sm:flex space-x-3 text-gray-600 items-center"> {/* Sembunyikan ikon di layar xs (opsional) */}
             {/* ... ikon Anda ... */}
-             <a href="..." className="hover:text-purple-700 ..."><FaPinterestP size={16} /></a> {/* Perkecil ikon sedikit */}
-             <a href="..." className="hover:text-purple-700 ..."><FaInstagram size={16} /></a>
-             <a href="..." className="hover:text-purple-700 ..."><FaWhatsapp size={16} /></a>
+             <a href="https://id.pinterest.com/gainataslaras/" className="hover:text-purple-700 ..."><FaPinterestP size={16} /></a> {/* Perkecil ikon sedikit */}
+             <a href="https://www.instagram.com/gaianata/" className="hover:text-purple-700 ..."><FaInstagram size={16} /></a>
+             <a href="https://api.whatsapp.com/message/TOHGD4ZY6XAQO1?autoload=1&app_absent=0" className="hover:text-purple-700 ..."><FaWhatsapp size={16} /></a>
           </div>
         </div>
       </div>
