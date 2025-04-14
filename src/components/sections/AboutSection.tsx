@@ -1,4 +1,5 @@
 import React from 'react';
+import FadeInWhenVisible from '../../components/ui/FadeInWhenVisible';
 
 const AboutSection = () => {
   return (
@@ -22,36 +23,50 @@ const AboutSection = () => {
           {/* Kolom Kiri (2/5 lebar di layar besar) */}
           {/* 'lg:col-span-2' -> Mengambil 2 dari 5 kolom di lg */}
           <div className="lg:col-span-2 space-y-4">
+          <FadeInWhenVisible yOffset={30} duration={0.6}>
             <h3 className="text-3xl sm:text-4xl font-serif text-gray-800 leading-tight">
               HELLO, <br />
               WELCOME TO <br />
               GAIA NATA
             </h3>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible yOffset={30} duration={0.6} delay={0.2}>
             <p className="text-lg italic text-gray-600">
               We are designers, decorators, and florists dedicated to transforming spaces with bespoke styling and timeless elegance.
             </p>
+              </FadeInWhenVisible>
           </div>
 
           {/* Kolom Kanan (3/5 lebar di layar besar) */}
           {/* 'lg:col-span-3' -> Mengambil 3 dari 5 kolom di lg */}
           <div className="lg:col-span-3 space-y-6 text-gray-700">
+            <FadeInWhenVisible yOffset={20} duration={0.5} delay={0.3}>
             <p>
               At Gaia Nata, we believe a wedding is more than a ceremony—it is an expression of identity, heritage, and personal style. With over a decade of experience, we have helped hundreds of couples bring their wedding dreams to life, crafting bespoke designs that transform vision into extraordinary reality.
             </p>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible yOffset={20} duration={0.5} delay={0.4}>
             <p>
               Founded in 2013 by Ina Sophiaan and Aksara Sophiaan-Fauri, Gaia Nata was built on a passion for artistry, cultural richness, and impeccable craftsmanship. Every element of our work is intentional, a seamless blend of precision and creativity. We honor tradition while embracing innovation, striking a delicate balance between heritage and contemporary aesthetics. Our designs are deeply personal, refined, and curated to reflect the unique essence of each couple.
             </p>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible yOffset={20} duration={0.5} delay={0.5}>
             <p>
               Luxury is not just about grandeur—it is about harmony, refinement, and effortless execution. With a dedication to excellence and consistency, our team orchestrates every detail with precision, ensuring a seamless experience from concept to execution.
             </p>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible yOffset={20} duration={0.5} delay={0.6}>
             <p>
               For those who seek a wedding that is truly one of a kind, Gaia Nata offers a bespoke service, where every detail is designed exclusively for you.
             </p>
+            </FadeInWhenVisible>
 
             {/* Bagian Penutup yang Menonjol */}
+            <FadeInWhenVisible yOffset={20} duration={0.5} delay={0.7}>
             <p className="text-2xl font-serif text-purple-800 mt-8 italic"> {/* Sesuaikan warna text-purple-800 */}
               Because your love story deserves nothing less than perfection.
             </p>
+            </FadeInWhenVisible>
           </div>
 
         </div>

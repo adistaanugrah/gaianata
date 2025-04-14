@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import FadeInWhenVisible from '../../components/ui/FadeInWhenVisible';
 
 const HeroSection = () => {
   return (
@@ -34,15 +35,18 @@ const HeroSection = () => {
 
           {/* Tanda Kutip Atas */}
           {/* Sesuaikan posisi (top/left) dan warna (text-purple-200) */}
+          <FadeInWhenVisible yOffset={20} duration={0.5} delay={0.4}>
           <span
             aria-hidden="true"
-            className="absolute -top-8 -left-8 text-8xl font-serif text-purple-200 opacity-50 z-0"
+            className="absolute -top-8 -left-8 text-9xl font-serif text-purple-200 opacity-50 z-0"
           >
             “
           </span>
+          </FadeInWhenVisible>
 
           {/* Judul Utama */}
           {/* Gunakan font-serif, ukuran teks responsif, warna teks */}
+          <FadeInWhenVisible yOffset={30} duration={0.6}>
           <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-serif leading-tight mb-8 sm:mb-10 text-gray-800">
             BESPOKE <br />
             IN EVERY <br />
@@ -51,9 +55,11 @@ const HeroSection = () => {
             YOUR <br />
             MOMENT
           </h1>
+          </FadeInWhenVisible>
 
           {/* Tombol Enter */}
           {/* Arahkan href ke section berikutnya yang sesuai, misal #our-service atau #about-us */}
+          
           <Link href="#our-service" className="relative z-10">
              <button
                // Ganti warna bg-purple-800 dg warna brand Anda
@@ -62,15 +68,18 @@ const HeroSection = () => {
                 enter
              </button>
           </Link>
+          
 
           {/* Tanda Kutip Bawah */}
           {/* Sesuaikan posisi (bottom/right) dan warna */}
+          <FadeInWhenVisible yOffset={20} duration={0.5} delay={0.6}>
           <span
             aria-hidden="true"
             className="absolute -bottom-8 -right-8 text-8xl font-serif text-purple-200 opacity-50 z-0"
           >
             ”
           </span>
+          </FadeInWhenVisible>
         </div>
       </div>
     </section>

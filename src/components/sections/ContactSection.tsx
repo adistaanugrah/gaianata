@@ -1,4 +1,5 @@
 import React from 'react';
+import FadeInWhenVisible from '../../components/ui/FadeInWhenVisible';
 
 const ContactSection = () => {
   return (
@@ -10,10 +11,12 @@ const ContactSection = () => {
 
         {/* Judul Utama */}
         {/* Sesuaikan ukuran, font, warna, dan spasi */}
+        <FadeInWhenVisible yOffset={30} duration={0.6}>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-gray-800 mb-12 lg:mb-16 leading-tight">
         LET&apos;S CREATE SOMETHING EXTRAORDINARY, <br />
           JUST FOR YOU
         </h2>
+        </FadeInWhenVisible>
 
         {/* Detail Kontak */}
         {/* space-y-4 untuk jarak vertikal antar item */}

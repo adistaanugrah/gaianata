@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link'; // Jika tombol download mengarah ke link
+import FadeInWhenVisible from '../../components/ui/FadeInWhenVisible';
 
 const PortfolioSection = () => {
   // Data untuk item portfolio (bisa juga diambil dari CMS nanti)
@@ -33,9 +34,11 @@ const PortfolioSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
 
         {/* Judul Utama */}
+        <FadeInWhenVisible yOffset={30} duration={0.6}>
         <h2 className="text-3xl sm:text-4xl font-serif text-gray-800 mb-6">
           EXPLORE OUR WORK AND GET INSPIRED!
         </h2>
+        </FadeInWhenVisible>
 
                {/* Tombol Download */}
                <div className="mb-12 lg:mb-16">

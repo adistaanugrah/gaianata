@@ -25,6 +25,12 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'Gaia Nata - Bespoke Floral & Event Design',
   description: 'Creating unforgettable moments with bespoke floral art and event decoration.',
+  viewport: 'width=device-width, initial-scale=1',
+  icons: {
+    // GANTI nilai 'icon' dengan path ke file ikon BARU Anda
+    icon: '/gaia-nata-icon.png', // <-- CONTOH jika nama file Anda gaia-nata-icon.png
+    // Atau jika pakai SVG: icon: '/gaia-nata-icon.svg',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

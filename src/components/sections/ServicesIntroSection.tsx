@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import FadeInWhenVisible from '../../components/ui/FadeInWhenVisible';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -66,16 +67,20 @@ const ServicesIntroSection = () => {
           {/* Ganti 'bg-purple-50' dengan warna brand Anda, misal 'bg-brand-purple-light/20' */}
           {/* Ganti warna teks sesuai brand */}
           <div className="w-full lg:w-1/2 bg-purple-50 p-8 lg:p-12 rounded-lg text-center lg:text-left flex flex-col justify-center min-h-[400px]">
+          <FadeInWhenVisible yOffset={20} duration={0.5} >
              <h2 className="text-3xl lg:text-4xl font-serif text-purple-900 mb-6 leading-tight">
                EXPLORE OUR SERVICES AND DISCOVER HOW WE TRANSFORM SPACES WITH ARTISTRY, PRECISION AND TIMELESS ELEGANCE
              </h2>
+             </FadeInWhenVisible>
              {/* Tombol ini bisa mengarah ke section portfolio */}
              <Link href="#portfolio" className="mt-6 inline-block">
+             
                 <button
                   className="inline-block bg-purple-800 text-white px-8 py-3 rounded uppercase text-sm tracking-wider font-semibold hover:bg-purple-900 transition duration-300"
                 >
                    explore our services
                 </button>
+                
              </Link>
           </div>
 
