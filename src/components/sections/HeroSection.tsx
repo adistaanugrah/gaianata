@@ -13,7 +13,7 @@ const HeroSection = () => {
       {/* 'w-full md:w-1/2' -> lebar penuh di mobile, setengah di medium+ */}
       {/* 'h-[60vh] md:h-screen' -> atur tinggi spesifik di mobile, tinggi penuh di medium+ */}
       {/* 'relative' agar Image bisa 'fill' */}
-      <div className="w-full md:w-3/2 h-[60vh] md:h-screen relative order-1 md:order-1"> {/* order-1 memastikan urutan visual */}
+      <div className="w-full md:w-3/4 h-[60vh] md:h-screen relative order-1 md:order-1"> {/* order-1 memastikan urutan visual */}
         <Image
           src="/images/couple-photo.jpg" // Pastikan nama file benar
           alt="Wedding couple"
@@ -29,7 +29,7 @@ const HeroSection = () => {
       {/* 'flex items-center justify-center' -> menengahkan konten di dalam kolom */}
       {/* 'p-8 sm:p-12 md:p-16' -> padding */}
       {/* 'relative' untuk positioning quotes */}
-      <div className="w-full md:w-1/2 flex items-center justify-center p-8 sm:p-6 md:p-8 lg:p-12 relative order-2 md:order-2">
+      <div className="w-full md:w-1/4 flex items-center justify-center p-8 sm:p-6 md:p-8 lg:p-12 relative order-2 md:order-2">
         {/* Container untuk konten teks agar mudah ditengahkan jika perlu */}
         <div className="text-center max-w-md relative"> {/* max-w-md membatasi lebar teks */}
 

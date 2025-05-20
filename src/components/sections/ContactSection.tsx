@@ -36,12 +36,12 @@ const ContactSection = () => {
           <div>
             <span className="font-semibold uppercase tracking-wider text-sm block mb-1">WEBSITE:</span>
             <a
-              href="https://www.gaianata.com" // Pastikan URL benar dan pakai https://
+              href="https://www.gaianata.id" // Pastikan URL benar dan pakai https://
               target="_blank" // Buka di tab baru
               rel="noopener noreferrer" // Keamanan untuk target="_blank"
               className="hover:text-purple-800 hover:underline transition duration-300"
             >
-              www.gaianata.com
+              gaianata.id
             </a>
           </div>
 

@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 // Import Poppins dan font serif Anda (misal Playfair_Display)
 import { Playfair_Display, Poppins } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/ui/Header';
 import Footer from '@/components/ui/Footer';

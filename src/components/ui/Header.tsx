@@ -22,13 +22,13 @@ const Header = () => {
 
         {/* Logo di Tengah */}
         {/* Ukuran logo mungkin perlu dikecilkan lagi untuk mobile, tapi 100x50 mungkin oke */}
-        <div className="px-2 sm:px-4 flex-shrink-0 w-24 lg:w-44"> {/* Beri sedikit padding horizontal logo */}
+        <div className="px-2 sm:px-4 flex-shrink-0 w-24 lg:w-96"> {/* Beri sedikit padding horizontal logo */}
           <Link href="#home">
             <Image
-              src="/images/logo-gaia-nata2.png"
+              src="/images/gaianatalogo_h_2.png"
               alt="Gaia Nata Logo"
-              width={176} // Mungkin coba 80?
-              height={88}  // Mungkin coba 40? Sesuaikan rasio!
+              width={704} // Mungkin coba 80?
+              height={352}  // Mungkin coba 40? Sesuaikan rasio!
               className="h-auto"
               priority
             />
