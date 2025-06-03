@@ -13,10 +13,10 @@ const Header = () => {
         {/* Grup Navigasi Kiri */}
         <nav className="flex-1 min-w-0"> {/* Tambah flex-1 dan min-w-0 agar bisa mengecil */}
           {/* Kurangi space-x di mobile jika perlu */}
-          <ul className="flex space-x-3 sm:space-x-4 text-xs sm:text-sm uppercase tracking-wider text-gray-600 justify-start"> {/* space-x-3, justify-start */}
-            <li><Link href="#home" className="hover:text-purple-700">Home</Link></li>
-            <li><Link href="#about-us" className="hover:text-purple-700">About Us</Link></li>
-            <li><Link href="#our-service" className="hover:text-purple-700">Our Service</Link></li>
+          <ul className="flex space-x-3 sm:space-x-4 text-xs sm:text-sm uppercase tracking-wider text-textDarkGray justify-start"> {/* space-x-3, justify-start */}
+            <li><Link href="#home" className="hover:text-textPurpleHover">Home</Link></li>
+            <li><Link href="#about-us" className="hover:text-textPurpleHover">About Us</Link></li>
+            <li><Link href="#our-service" className="hover:text-textPurpleHover">Our Service</Link></li>
           </ul>
         </nav>
 
@@ -38,17 +38,17 @@ const Header = () => {
         {/* Grup Navigasi Kanan + Sosial Media */}
         <div className="flex flex-1 min-w-0 items-center justify-end space-x-3 sm:space-x-4"> {/* Tambah flex-1, min-w-0, justify-end */}
           <nav>
-            <ul className="flex space-x-3 sm:space-x-4 text-xs sm:text-sm uppercase tracking-wider text-gray-600">
-              <li><Link href="#our-team" className="hover:text-purple-700">Our Team</Link></li>
-              <li><Link href="#contact" className="hover:text-purple-700">Our Contact</Link></li>
+            <ul className="flex space-x-3 sm:space-x-4 text-xs sm:text-sm uppercase tracking-wider text-textDarkGray">
+              <li><Link href="#our-team" className="hover:text-brandPurpleHover">Our Team</Link></li>
+              <li><Link href="#contact" className="hover:text-textPurpleHover">Our Contact</Link></li>
             </ul>
           </nav>
           {/* Ikon Sosial Media */}
           <div className="hidden sm:flex space-x-3 text-gray-600 items-center"> {/* Sembunyikan ikon di layar xs (opsional) */}
             {/* ... ikon Anda ... */}
-             <a href="https://id.pinterest.com/gainataslaras/" className="hover:text-purple-700 ..."><FaPinterestP size={16} /></a> {/* Perkecil ikon sedikit */}
-             <a href="https://www.instagram.com/gaianata/" className="hover:text-purple-700 ..."><FaInstagram size={16} /></a>
-             <a href="https://wa.me/6287785739449" className="hover:text-purple-700 ..."><FaWhatsapp size={16} /></a>
+             <a href="https://id.pinterest.com/gainataslaras/" className="hover:text-textPurpleHover ..."><FaPinterestP size={16} /></a> {/* Perkecil ikon sedikit */}
+             <a href="https://www.instagram.com/gaianata/" className="hover:text-textPurpleHover ..."><FaInstagram size={16} /></a>
+             <a href="https://wa.me/6287785739449" className="hover:text-textPurpleHover ..."><FaWhatsapp size={16} /></a>
           </div>
         </div>
       </div>
