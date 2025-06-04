@@ -71,7 +71,7 @@ const ServicesIntroSection = () => {
                   'leading-relaxed': Jarak antar baris.
                   'mb-6 md:mb-8': Margin bawah untuk memberi jarak ke paragraf berikutnya.
                 */}
-                <span className="font-semibold">Gaianata</span> offers complete decoration services, including concept development, theme design, lighting, table styling, and floral arrangements.
+                <span className="font-semibold">gaia</span>nata offers complete decoration services, including concept development, theme design, lighting, table styling, and floral arrangements.
                 {/* 
                   Gunakan <span className="font-semibold"> jika Museo weight 600 dimuat, 
                   atau <span className="font-bold"> jika Museo weight 700 dimuat.

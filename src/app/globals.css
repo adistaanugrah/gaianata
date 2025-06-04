@@ -8,6 +8,50 @@
   --foreground: #171717;
 }
 
+/* Sesuaikan warna untuk Swiper dengan kelas .mySwiper */
+.mySwiper {
+  /* Warna untuk panah navigasi (Next/Prev) */
+  --swiper-navigation-color: #FFFF; /* Ganti dengan kode warna ungu Anda */
+
+  /* Warna untuk titik pagination yang aktif */
+  --swiper-pagination-color: #5A3E8A; /* Ganti dengan kode warna ungu Anda */
+
+  /* Warna untuk titik pagination yang tidak aktif */
+  --swiper-pagination-bullet-inactive-color: #CCCCCC; /* Ganti dengan kode warna abu-abu Anda */
+
+  /* Opsional: Sesuaikan opasitas titik pagination yang tidak aktif (defaultnya 0.2) */
+  /* --swiper-pagination-bullet-inactive-opacity: 0.5; */
+
+  /* Opsional: Sesuaikan ukuran panah navigasi jika perlu */
+  /* --swiper-navigation-size: 28px; */ /* Defaultnya 44px, mungkin terlalu besar, bisa dikecilkan */
+}
+
+/* Anda juga bisa membuat panah navigasi sedikit lebih kecil dan mengubah warna saat hover jika diinginkan */
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  /* Mungkin ingin mengecilkan ukuran dari default Swiper */
+  /* Untuk melakukan ini, Anda mungkin perlu meng-override width dan height juga, atau cukup --swiper-navigation-size */
+  /* Contoh:
+  width: 30px !important;
+  height: 30px !important;
+  */
+}
+
+.mySwiper .swiper-button-next::after,
+.mySwiper .swiper-button-prev::after {
+  /* Jika ingin ikon panah lebih kecil dari kontainer tombolnya */
+  font-size: 18px !important; /* Sesuaikan ukuran ikon panah */
+  font-weight: bold; /* Membuat panah lebih tebal */
+}
+
+/* Contoh jika ingin warna panah berubah saat hover */
+/*
+.mySwiper .swiper-button-next:hover,
+.mySwiper .swiper-button-prev:hover {
+  --swiper-navigation-color: #7A5FB8; /* Warna hover ungu yang sedikit lebih terang * /
+}
+*/
+
 /* Bagian @theme inline:
    Jika --font-geist-sans dan --font-geist-mono tidak lagi relevan
    karena Anda tidak menggunakan Geist font, Anda bisa menghapusnya dari sini
@@ -15,6 +59,18 @@
    Untuk saat ini, kita bisa biarkan, karena variabel CSS dari next/font
    akan lebih spesifik digunakan oleh Tailwind.
 */
+
+/* Contoh di styles/globals.css */
+.myHeroSwiper {
+  --swiper-navigation-color: #FFFF; /* Ganti dengan warna Anda */
+  --swiper-pagination-color: #5A3E8A; /* Ganti dengan warna Anda */
+  /* --swiper-navigation-size: 30px; */ /* Sesuaikan ukuran panah jika perlu */
+}
+
+.myHeroSwiper .swiper-button-next,
+.myHeroSwiper .swiper-button-prev {
+  /* Styling tambahan jika perlu */
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

@@ -45,8 +45,8 @@ const PortfolioSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
 
         <FadeInWhenVisible yOffset={30} duration={0.6}>
-        <h2 className="text-3xl sm:text-4xl font-tertiary text-textCharcoal mb-6">
-          EXPLORE OUR WORK AND GET INSPIRED!
+        <h2 className="text-3xl sm:text-4xl font-quartenary italic text-textCharcoal mb-6">
+          explore our work and get inspired!
         </h2>
         </FadeInWhenVisible>
 
@@ -77,7 +77,7 @@ const PortfolioSection = () => {
 
               {/* Judul Item (Bisa Kustom atau Standar) */}
               {item.isCustomTitle && item.customTitleParts ? (
-                <h3 className="text-xl sm:text-2xl font-primary mb-3"> 
+                <h1 className="text-3xl sm:text-3xl font-semibold mb-3"> 
                   {/* 
                     'font-primary': Font Museo.
                     Ukuran disesuaikan, tidak uppercase, tidak tracking-wider.
@@ -89,16 +89,16 @@ const PortfolioSection = () => {
                     'font-semibold text-black': Untuk "our". Pastikan Museo weight 600 atau 700 dimuat.
                     'font-normal text-brandbg2-primary': Untuk "decoration". Warna #838383 (abu-abu medium).
                   */}
-                </h3>
+                </h1>
               ) : (
-                <h3 className="text-lg sm:text-xl font-primary text-textCharcoal mb-2 uppercase tracking-wider">
+                <h3 className="text-lg sm:text-xl font-tertiary italic text-textCharcoal mb-2 uppercase tracking-wider">
                   {item.title}
                 </h3>
               )}
 
               {/* Deskripsi Item */}
               {item.isCustomTitle ? ( // Gunakan flag yang sama untuk styling deskripsi terkait judul kustom
-                <p className="font-primary text-sm text-brandbg2-primary leading-relaxed max-w-xs mx-auto px-1">
+                <p className="font-secondary italic text-md text-brandbg2-primary leading-relaxed max-w-xs mx-auto px-1">
                   {/* 
                     'font-primary': Font Museo.
                     'text-brandbg2-primary': Warna #838383 (abu-abu medium).
@@ -109,7 +109,7 @@ const PortfolioSection = () => {
                   {item.description}
                 </p>
               ) : (
-                <p className="text-gray-600 text-sm max-w-xs mx-auto px-1">
+                <p className="text-textCharcoal font-tertiary italic text-lg max-w-xs mx-auto px-1">
                   {item.description}
                 </p>
               )}

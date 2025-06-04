@@ -31,9 +31,9 @@ const TeamSection = () => {
 
         {/* Judul Section */}
         <div className="text-center mb-12 lg:mb-16">
-          <p className="text-sm uppercase tracking-widest text-gray-500 mb-2">our team</p>
-          <h2 className="text-3xl sm:text-4xl font-serif text-gray-800">
-            THE PEOPLE BEHIND GAIA NATA
+          <p className="text-sm font-bold uppercase tracking-widest text-textCharcoal mb-2">our team</p>
+          <h2 className="text-3xl sm:text-4xl font-quartenary italic text-textCharcoal">
+            THE PEOPLE BEHIND GAIANATA
           </h2>
         </div>
 
@@ -73,11 +73,11 @@ const TeamSection = () => {
 
                 {/* Nama & Jabatan */}
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-800 uppercase tracking-wider">
+                  <h3 className="text-lg font-bold text-textCharcoal uppercase tracking-wider">
                     {member.name}
                   </h3>
                   {/* 'whitespace-pre-line' agar \n berfungsi sebagai baris baru */}
-                  <p className="text-sm text-gray-600 uppercase tracking-wider whitespace-pre-line">
+                  <p className="text-sm font-quartenary italic text-textCharcoal tracking-wider whitespace-pre-line">
                     {member.role}
                   </p>
                 </div>
