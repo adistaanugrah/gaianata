@@ -1,7 +1,5 @@
 import React from 'react';
 import FadeInWhenVisible from '../../components/ui/FadeInWhenVisible';
-// Impor ikon yang dibutuhkan
-import { FaInstagram, FaWhatsapp, FaEnvelope, FaPinterestP } from 'react-icons/fa';
 
 const ContactSection = () => {
   const iconColor = "text-brandPurple"; // Definisikan warna ikon di sini, misalnya warna brand Anda
