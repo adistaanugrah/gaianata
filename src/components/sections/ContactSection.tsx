@@ -16,7 +16,7 @@ const ContactSection = () => {
         <FadeInWhenVisible yOffset={30} duration={0.6}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-quartenary italic text-gray-800 mb-12 lg:mb-16 leading-tight">
             {/* PERBAIKAN: Ubah ' menjadi ' */}
-            LET'S CREATE SOMETHING EXTRAORDINARY, <br />
+            LET&apos;S CREATE SOMETHING EXTRAORDINARY, <br />
             JUST FOR YOU
           </h2>
         </FadeInWhenVisible>
