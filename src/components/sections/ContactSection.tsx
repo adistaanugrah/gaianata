@@ -17,7 +17,7 @@ const ContactSection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-quartenary italic text-gray-800 mb-12 lg:mb-16 leading-tight">
             {/* PERBAIKAN: Ubah ' menjadi ' */}
             LET&apos;S CREATE SOMETHING EXTRAORDINARY, <br />
-            JUST FOR YOU
+            JUST FOR YOU!
           </h2>
         </FadeInWhenVisible>
 
@@ -71,7 +71,7 @@ const ContactSection = () => {
                 rel="noopener noreferrer"
                 className="hover:text-brandPurpleHover hover:underline transition duration-300"
               >
-                gaianataslaras
+                gaianata
               </a>
             </div>
 

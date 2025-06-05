@@ -45,7 +45,7 @@ const PortfolioSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
 
         <FadeInWhenVisible yOffset={30} duration={0.6}>
-        <h2 className="text-3xl sm:text-4xl font-quartenary italic text-textCharcoal mb-6">
+        <h2 className="text-3xl uppercase sm:text-4xl font-quartenary italic text-textCharcoal mb-6">
           explore our work and get inspired!
         </h2>
         </FadeInWhenVisible>
@@ -53,7 +53,7 @@ const PortfolioSection = () => {
         <div className="mb-12 lg:mb-16">
           <Link
             href="/portfolio.pdf" 
-            className="inline-block bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-quartenary italic hover:bg-brand-primary-hover transition duration-300"
+            className="inline-block bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-bold italic hover:bg-brand-primary-hover transition duration-300"
             // download="GaiaNata-Portfolio.pdf" 
           >
             download our portfolio

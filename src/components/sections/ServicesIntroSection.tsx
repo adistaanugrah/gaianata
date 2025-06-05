@@ -71,7 +71,7 @@ const ServicesIntroSection = () => {
           >
             <FadeInWhenVisible yOffset={20} duration={0.5} >
               <p className="font-primary text-brandtext-primary text-lg md:text-xl leading-relaxed mb-6 md:mb-8">
-                <span className="font-semibold">gaia</span>nata offers complete decoration services, including concept development, theme design, lighting, table styling, and floral arrangements.
+                <span className="font-bold">Gaianata</span> offers complete decoration services, including concept development, theme design, lighting, table styling, and floral arrangements.
               </p>
               <p className="font-primary text-brandtext-primary text-lg md:text-xl leading-relaxed">
                 From Cultural ceremonies, Engagements, Akad Nikah & Holy Matrimonies, to Wedding Receptions and other events — we’re here to make your vision come to life.
@@ -80,7 +80,7 @@ const ServicesIntroSection = () => {
             
             <Link href="#portfolio" className="mt-8 md:mt-10 inline-block">
               <button
-                className="inline-block bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-quartenary italic hover:bg-brand-primary-hover transition duration-300"
+                className="inline-block bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-bold italic hover:bg-brand-primary-hover transition duration-300"
               >
                  explore our services
               </button>

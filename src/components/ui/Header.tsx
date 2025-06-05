@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaPinterestP, FaInstagram, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import { IoMailOutline } from "react-icons/io5";
+import { PiPinterestLogo } from "react-icons/pi";
+
+
 
 const Header = () => {
   return (
@@ -56,7 +60,7 @@ const Header = () => {
             
             {/* Item Navigasi Kiri (Selalu ada) */}
             <li><Link href="#about-us" className="hover:text-textPurpleHover whitespace-nowrap">About Us</Link></li>
-            <li><Link href="#our-service" className="hover:text-textPurpleHover whitespace-nowrap">Our Service</Link></li>
+            <li><Link href="#our-service" className="hover:text-textPurpleHover whitespace-nowrap">Our Services</Link></li>
 
             {/* Item Navigasi Kanan (Hanya muncul di mobile dalam UL ini, di desktop pindah ke blok lain) */}
             <li className="md:hidden"><Link href="#our-team" className="hover:text-brandPurpleHover whitespace-nowrap">Our Team</Link></li>
@@ -92,8 +96,8 @@ const Header = () => {
           <div className="flex space-x-2 pl-3 items-center text-gray-600"> {/* pl-3 untuk jarak dari nav kanan */}
              <a href="https://www.instagram.com/gaianata/" className="hover:text-textPurpleHover"><FaInstagram size={14} /></a>
              <a href="https://wa.me/6287785739449" className="hover:text-textPurpleHover"><FaWhatsapp size={14} /></a>
-             <a href="mailto:hello@gaianata.id" className="hover:text-textPurpleHover"><FaEnvelope size={14} /></a>
-             <a href="https://id.pinterest.com/gainataslaras/" className="hover:text-textPurpleHover"><FaPinterestP size={14} /></a>
+             <a href="mailto:hello@gaianata.id" className="hover:text-textPurpleHover"><IoMailOutline size={15} /></a>
+             <a href="https://id.pinterest.com/gainataslaras/" className="hover:text-textPurpleHover"><PiPinterestLogo size={15} /></a>
           </div>
         </div>
 

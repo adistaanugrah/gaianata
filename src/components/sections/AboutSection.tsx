@@ -24,7 +24,7 @@ const AboutSection = () => {
           {/* 'lg:col-span-2' -> Mengambil 2 dari 5 kolom di lg */}
           <div className="lg:col-span-2 space-y-4">
           <FadeInWhenVisible yOffset={30} duration={0.6}>
-            <h3 className="text-3xl sm:text-4xl font-tertiary italic text-gray-800 leading-tight">
+            <h3 className="text-3xl sm:text-4xl font-tertiary italic text-gray-800 ">
               HELLO, <br />
               WELCOME TO <br />
               GAIANATA
@@ -64,7 +64,7 @@ const AboutSection = () => {
             {/* Bagian Penutup yang Menonjol */}
             <FadeInWhenVisible yOffset={20} duration={0.5} delay={0.7}>
             <p className="text-lg font-secondary italic text-brandPurple mt-8"> {/* Sesuaikan warna*/}
-              Because your love story deserves nothing less than perfection.
+              "Because Your Love Story Deserves Nothing Less Than Perfection"
             </p>
             </FadeInWhenVisible>
           </div>

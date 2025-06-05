@@ -36,7 +36,7 @@ const HeroSection = () => {
         Untuk kasus ini, `rounded-xl` saja sudah cukup jika gambar selalu tampak rounded di semua sisinya.
         Saya akan menggunakan `rounded-xl` untuk konsistensi.
       */}
-      <div className="w-full md:w-3/4 h-[55vh] md:h-screen relative order-1 md:order-1 overflow-hidden rounded-xl">
+      <div className="w-full md:w-3/4 h-[55vh] md:h-screen relative order-1 md:order-1 overflow-hidden">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={0}
@@ -109,7 +109,7 @@ const HeroSection = () => {
         </div>
         <Link href="#our-service" className="relative z-20 mt-6 sm:mt-8 md:mt-10">
           <button
-            className="bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-quartenary italic hover:bg-brand-primary-hover transition duration-300"
+            className="bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-bold italic hover:bg-brand-primary-hover transition duration-300"
           >
             enter
           </button>
