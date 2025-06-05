@@ -64,7 +64,7 @@ const AboutSection = () => {
             {/* Bagian Penutup yang Menonjol */}
             <FadeInWhenVisible yOffset={20} duration={0.5} delay={0.7}>
             <p className="text-lg font-secondary italic text-brandPurple mt-8"> {/* Sesuaikan warna*/}
-              "Because Your Love Story Deserves Nothing Less Than Perfection"
+            &quot;Because Your Love Story Deserves Nothing Less Than Perfection&quot;
             </p>
             </FadeInWhenVisible>
           </div>
