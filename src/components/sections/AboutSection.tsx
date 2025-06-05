@@ -39,7 +39,7 @@ const AboutSection = () => {
 
           {/* Kolom Kanan (3/5 lebar di layar besar) */}
           {/* 'lg:col-span-3' -> Mengambil 3 dari 5 kolom di lg */}
-          <div className="lg:col-span-3 space-y-6 font-secondary italic text-textCharcoal">
+          <div className="text-lg md:text-xl lg:col-span-3 space-y-6 font-primary text-textCharcoal">
             <FadeInWhenVisible yOffset={20} duration={0.5} delay={0.3}>
             <p>
               At Gaianata, we believe a wedding is more than a ceremony—it is an expression of identity, heritage, and personal style. With over a decade of experience, we have helped hundreds of couples bring their wedding dreams to life, crafting bespoke designs that transform vision into extraordinary reality.
@@ -63,7 +63,7 @@ const AboutSection = () => {
 
             {/* Bagian Penutup yang Menonjol */}
             <FadeInWhenVisible yOffset={20} duration={0.5} delay={0.7}>
-            <p className="text-lg font-secondary italic text-brandPurple mt-8 italic"> {/* Sesuaikan warna*/}
+            <p className="text-lg font-secondary italic text-brandPurple mt-8"> {/* Sesuaikan warna*/}
               Because your love story deserves nothing less than perfection.
             </p>
             </FadeInWhenVisible>
