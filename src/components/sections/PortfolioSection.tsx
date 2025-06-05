@@ -53,7 +53,7 @@ const PortfolioSection = () => {
         <div className="mb-12 lg:mb-16">
           <Link
             href="/portfolio.pdf" 
-            className="inline-block bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-semibold hover:bg-brand-primary-hover transition duration-300"
+            className="inline-block bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-quartenary italic hover:bg-brand-primary-hover transition duration-300"
             // download="GaiaNata-Portfolio.pdf" 
           >
             download our portfolio

@@ -14,7 +14,7 @@
   --swiper-navigation-color: #FFFF; /* Ganti dengan kode warna ungu Anda */
 
   /* Warna untuk titik pagination yang aktif */
-  --swiper-pagination-color: #5A3E8A; /* Ganti dengan kode warna ungu Anda */
+  --swiper-pagination-color: #FFFF; /* Ganti dengan kode warna ungu Anda */
 
   /* Warna untuk titik pagination yang tidak aktif */
   --swiper-pagination-bullet-inactive-color: #CCCCCC; /* Ganti dengan kode warna abu-abu Anda */
@@ -63,7 +63,7 @@
 /* Contoh di styles/globals.css */
 .myHeroSwiper {
   --swiper-navigation-color: #FFFF; /* Ganti dengan warna Anda */
-  --swiper-pagination-color: #5A3E8A; /* Ganti dengan warna Anda */
+  --swiper-pagination-color: #FFFF; /* Ganti dengan warna Anda */
   /* --swiper-navigation-size: 30px; */ /* Sesuaikan ukuran panah jika perlu */
 }
 
