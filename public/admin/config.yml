@@ -1,0 +1,108 @@
+# Backend & Media
+backend:
+  name: git-gateway
+  branch: main # Ganti ke 'master' jika perlu
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Collections: Titik awal untuk mengedit konten
+collections:
+  # Pengaturan yang berlaku di seluruh situs (Header, Footer, dll)
+  - name: "settings"
+    label: "⚙️ Pengaturan Global"
+    files:
+      - label: "Informasi Umum & Kontak"
+        name: "general"
+        file: "src/content/settings.json"
+        fields:
+          - { label: "Logo Situs", name: "site_logo", widget: "image" }
+          - { label: "Email Kontak Utama", name: "contact_email", widget: "string" }
+          - label: "Link Sosial Media"
+            name: "social_links"
+            widget: "object"
+            fields:
+              - { label: "Link Instagram", name: "instagram", widget: "string" }
+              - { label: "Link WhatsApp (wa.me)", name: "whatsapp", widget: "string" }
+              - { label: "Link Pinterest", name: "pinterest", widget: "string" }
+          - label: "Teks Footer"
+            name: "footer_text"
+            widget: "string"
+            hint: "Gunakan {YEAR} untuk tahun saat ini dan {EMAIL} untuk email kontak."
+
+  # Konten yang spesifik untuk setiap section di Halaman Utama
+  - name: "homepage"
+    label: "🏠 Konten Halaman Utama"
+    files:
+      - label: "Konten Halaman"
+        name: "main"
+        file: "src/content/homepage.json"
+        fields:
+          # --- HERO SECTION ---
+          - label: "Hero Section"
+            name: "hero_section"
+            widget: "object"
+            fields:
+              - { label: "Gambar Slideshow", name: "slideshow_images", widget: "list", field: { label: "Gambar", name: "image", widget: "image" } }
+              - { label: "Teks Kutipan", name: "quote_text", widget: "textarea" }
+              - { label: "Teks Tombol", name: "button_text", widget: "string" }
+
+          # --- ABOUT SECTION ---
+          - label: "About Section"
+            name: "about_section"
+            widget: "object"
+            fields:
+              - { label: "Judul Sapaan", name: "greeting_title", widget: "textarea" }
+              - { label: "Subjudul Sapaan", name: "greeting_subtitle", widget: "string" }
+              - { label: "Teks Paragraf Utama", name: "main_text", widget: "markdown", hint: "Gunakan baris kosong untuk membuat paragraf baru." }
+              - { label: "Kutipan Penutup", name: "closing_quote", widget: "string" }
+
+          # --- SERVICES INTRO SECTION ---
+          - label: "Services Intro Section"
+            name: "services_section"
+            widget: "object"
+            fields:
+              - { label: "Gambar Carousel", name: "carousel_images", widget: "list", field: { label: "Gambar", name: "image", widget: "image" } }
+              - { label: "Paragraf Deskripsi 1", name: "paragraph_1", widget: "text" }
+              - { label: "Paragraf Deskripsi 2", name: "paragraph_2", widget: "text" }
+              - { label: "Teks Tombol", name: "button_text", widget: "string" }
+
+          # --- PORTFOLIO SECTION ---
+          - label: "Portfolio Section"
+            name: "portfolio_section"
+            widget: "object"
+            fields:
+              - { label: "Judul Utama", name: "main_title", widget: "string" }
+              - { label: "Teks Tombol Unduh", name: "button_text", widget: "string" }
+              - { label: "File Portfolio (PDF)", name: "portfolio_pdf_file", widget: "file" }
+              - label: "Item Portofolio"
+                name: "portfolio_items"
+                widget: "list"
+                fields:
+                  - { label: "Gambar", name: "image", widget: "image" }
+                  - { label: "Judul (Bagian Tebal)", name: "title_bold", widget: "string" }
+                  - { label: "Judul (Bagian Tipis)", name: "title_regular", widget: "string" }
+                  - { label: "Deskripsi", name: "description", widget: "text" }
+
+          # --- TEAM SECTION ---
+          - label: "Team Section"
+            name: "team_section"
+            widget: "object"
+            fields:
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Subjudul", name: "subtitle", widget: "string" }
+              - { label: "Gambar Grup", name: "group_image", widget: "image" }
+              - label: "Anggota Tim"
+                name: "team_members"
+                widget: "list"
+                fields:
+                  - { label: "Foto", name: "photo", widget: "image" }
+                  - { label: "Nama", name: "name", widget: "string" }
+                  - { label: "Jabatan", name: "role", widget: "textarea" }
+          
+          # --- CONTACT SECTION ---
+          - label: "Contact Section"
+            name: "contact_section"
+            widget: "object"
+            fields:
+              - { label: "Judul Utama", name: "main_title", widget: "textarea" }
+              # Informasi kontak akan diambil dari Pengaturan Global

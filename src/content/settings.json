@@ -1,0 +1,10 @@
+{
+    "site_logo": "/images/gaianatalogo_h_2.png",
+    "contact_email": "hello@gaianata.id",
+    "social_links": {
+      "instagram": "https://www.instagram.com/gaianata/",
+      "whatsapp": "https://wa.me/6287785739449",
+      "pinterest": "https://id.pinterest.com/gainataslaras/"
+    },
+    "footer_text": "© {YEAR} Gaianata | {EMAIL} | ALL RIGHTS RESERVED"
+  }

@@ -1,121 +1,67 @@
 // src/app/layout.tsx
+
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google'; // Kita tetap pakai Poppins dari Google Fonts
-import localFont from 'next/font/local';   // Impor untuk font lokal
+import { Poppins } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/ui/Header';
 import Footer from '@/components/ui/Footer';
 
-// --- KONFIGURASI FONT LOKAL ---
+// --- TAMBAHAN: Import modul Node.js untuk membaca file ---
+import fs from 'fs';
+import path from 'path';
 
-// 1. Museo (Primary)
+// --- Konfigurasi Font Anda (tetap sama) ---
 const museo = localFont({
-  src: [
-    {
-      path: '../../public/fonts/Museo300-Regular.otf', // GANTI DENGAN NAMA FILE ANDA
-      weight: '300', // Sesuai permintaan "Museo 300"
-      style: 'normal',
-    },
-    // Jika ada variasi lain dari Museo yang ingin digunakan, tambahkan di sini
-    // Contoh:
-    // {
-    //   path: '../../public/fonts/Museo500-Regular.otf',
-    //   weight: '500',
-    //   style: 'normal',
-    // },
-  ],
-  variable: '--font-museo', // Variabel CSS untuk Museo
+  src: [{ path: '../../public/fonts/Museo300-Regular.otf', weight: '300', style: 'normal' }],
+  variable: '--font-museo',
   display: 'swap',
 });
-
-// 2. Didot (Tertiary)
 const didot = localFont({
   src: [
-    {
-      path: '../../public/fonts/Didot-Regular.ttf', // GANTI NAMA FILE JIKA BERBEDA
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Didot-Italic.ttf', // PASTIKAN NAMA FILE INI BENAR
-      weight: '400', // Sesuaikan weight jika file italic Anda memiliki weight berbeda
-      style: 'italic',
-    },
-    // Tambahkan variasi bold jika ada dan ingin digunakan
-    // {
-    //   path: '../../public/fonts/Didot-Bold.ttf',
-    //   weight: '700',
-    //   style: 'normal',
-    // },
+    { path: '../../public/fonts/Didot-Regular.ttf', weight: '400', style: 'normal' },
+    { path: '../../public/fonts/Didot-Italic.ttf', weight: '400', style: 'italic' },
   ],
   variable: '--font-didot',
   display: 'swap',
 });
-
-// 3. Simple Ask (Quartenary)
 const simpleAsk = localFont({
-  src: [
-    {
-      path: '../../public/fonts/SimpleAsk-Regular.ttf', // GANTI DENGAN NAMA FILE ANDA
-      weight: '400', // Asumsi 'Regular'
-      style: 'normal',
-    },
-    // Jika ada variasi lain (Bold, Italic) dari Simple Ask, tambahkan di sini
-    // Contoh:
-    // {
-    //   path: '../../public/fonts/SimpleAsk-Bold.ttf',
-    //   weight: '700',
-    //   style: 'normal',
-    // },
-  ],
-  variable: '--font-simple-ask', // Variabel CSS untuk Simple Ask
+  src: [{ path: '../../public/fonts/SimpleAsk-Regular.ttf', weight: '400', style: 'normal' }],
+  variable: '--font-simple-ask',
   display: 'swap',
 });
-
-// --- KONFIGURASI FONT GOOGLE (Poppins - Secondary) ---
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'], // Weight yang sudah ada bisa dipertahankan
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-poppins',
 });
-
-// Hapus atau komentari Playfair_Display jika tidak lagi digunakan sebagai font serif utama
-// import { Playfair_Display } from 'next/font/google';
-// const playfair = Playfair_Display({
-//   subsets: ['latin'],
-//   weight: ['400', '700'],
-//   variable: '--font-playfair',
-// });
 
 export const metadata: Metadata = {
   title: 'Gaianata - “Bespoke In Every Bloom, Tailored To Your Moment”',
   description: 'Wedding & Event Decorator | Designer | Floral Art',
   viewport: 'width=device-width, initial-scale=1',
-  icons: {
-    icon: '/gaia-nata-icon.png',
-  },
+  icons: { icon: '/gaia-nata-icon.png' },
+};
+
+// --- TAMBAHAN: Fungsi untuk membaca data settings.json ---
+const getSettingsData = () => {
+  const filePath = path.join(process.cwd(), 'src/content/settings.json');
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+  return JSON.parse(fileContent);
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // --- TAMBAHAN: Panggil fungsi untuk mendapatkan data ---
+  const settings = getSettingsData();
+
   return (
-    <html lang="en" className={`
-      ${poppins.variable}
-      ${museo.variable}
-      ${didot.variable}
-      ${simpleAsk.variable}
-      {/* Hapus playfair.variable jika tidak digunakan lagi */}
-    `}>
-      {/*
-        font-sans akan mengambil dari tailwind.config.js,
-        yang akan kita set ke Poppins (var(--font-poppins)) sebagai default.
-        Jika Anda ingin Museo sebagai default body, ubah 'font-sans' di bawah
-        menjadi 'font-primary' dan pastikan 'font-primary' di tailwind.config.js
-        menggunakan var(--font-museo). Untuk sekarang, kita biarkan Poppins (via font-sans) sebagai default.
-      */}
+    <html lang="en" className={`${poppins.variable} ${museo.variable} ${didot.variable} ${simpleAsk.variable}`}>
       <body className="font-sans">
-        <Header />
+        {/* --- PERUBAHAN: Kirim data settings sebagai props --- */}
+        <Header settings={settings} />
         <main>{children}</main>
-        <Footer />
+        {/* --- PERUBAHAN: Kirim data settings sebagai props --- */}
+        <Footer settings={settings} />
       </body>
     </html>
   );

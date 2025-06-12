@@ -1,0 +1,53 @@
+{
+    "hero_section": {
+      "slideshow_images": [
+        { "image": "/images/Cover1.jpg" },
+        { "image": "/images/Cover2.jpg" },
+        { "image": "/images/Cover3.jpg" },
+        { "image": "/images/Cover4.jpg" },
+        { "image": "/images/Cover5.jpg" },
+        { "image": "/images/Cover6.jpg" },
+        { "image": "/images/Cover7.jpg" }
+      ],
+      "quote_text": "BESPOKE\nIN EVERY\nBLOOM,\nTAILORED TO \nYOUR MOMENT",
+      "button_text": "enter"
+    },
+    "about_section": {
+      "greeting_title": "HELLO,\nWELCOME TO\nGAIANATA",
+      "greeting_subtitle": "We are designers, decorators, and florists dedicated to transforming spaces with bespoke styling and timeless elegance.",
+      "main_text": "At Gaianata, we believe a wedding is more than a ceremony—it is an expression of identity, heritage, and personal style. With over a decade of experience, we have helped hundreds of couples bring their wedding dreams to life, crafting bespoke designs that transform vision into extraordinary reality.\n\nFounded in 2013 by Ina Sophiaan and Aksara Sophiaan-Fauri, Gaianata was built on a passion for artistry, cultural richness, and impeccable craftsmanship. Every element of our work is intentional, a seamless blend of precision and creativity. We honor tradition while embracing innovation, striking a delicate balance between heritage and contemporary aesthetics. Our designs are deeply personal, refined, and curated to reflect the unique essence of each couple.\n\nLuxury is not just about grandeur—it is about harmony, refinement, and effortless execution. With a dedication to excellence and consistency, our team orchestrates every detail with precision, ensuring a seamless experience from concept to execution.\n\nFor those who seek a wedding that is truly one of a kind, Gaianata offers a bespoke service, where every detail is designed exclusively for you.",
+      "closing_quote": "\"Because Your Love Story Deserves Nothing Less Than Perfection\""
+    },
+    "services_section": {
+      "carousel_images": [
+        { "image": "/images/service-image-1.jpg" },
+        { "image": "/images/service-image-2.jpg" }
+      ],
+      "paragraph_1": "Gaianata offers complete decoration services, including concept development, theme design, lighting, table styling, and floral arrangements.",
+      "paragraph_2": "From Cultural ceremonies, Engagements, Akad Nikah & Holy Matrimonies, to Wedding Receptions and other events — we’re here to make your vision come to life.",
+      "button_text": "explore our services"
+    },
+    "portfolio_section": {
+      "main_title": "explore our work and get inspired!",
+      "button_text": "download our portfolio",
+      "portfolio_pdf_file": "/portfolio.pdf",
+      "portfolio_items": [
+        { "image": "/images/portfolio-wedding.jpg", "title_bold": "our", "title_regular": "decoration", "description": "Whether you're drawn to timeless elegance, modern sophistication, or one-of-a-kind styles, we work closely with you to turn your vision into reality." },
+        { "image": "/images/portfolio-event.jpg", "title_bold": "our", "title_regular": "design", "description": "We thoughtfully craft every detail to reflect your personal story, ensuring a truly memorable experience for you and your guests." },
+        { "image": "/images/portfolio-styling.jpg", "title_bold": "floral", "title_regular": "stylist", "description": "Our floral creations bring elegance, charm, and the beauty of nature to your celebration — making every moment feel alive with meaning." }
+      ]
+    },
+    "team_section": {
+      "title": "our team",
+      "subtitle": "THE PEOPLE BEHIND GAIANATA",
+      "group_image": "/images/team-group.jpg",
+      "team_members": [
+        { "photo": "/images/team-ina.jpg", "name": "INA SOPHIAAN", "role": "FOUNDER\nMARKETING DIRECTOR" },
+        { "photo": "/images/team-aksara.jpg", "name": "AKSARA SOPHIAAN-FAURI", "role": "CO-FOUNDER\nCREATIVE DIRECTOR" },
+        { "photo": "/images/team-nayakara.jpg", "name": "NAYAKARA SATWIKATAMA", "role": "CO-FOUNDER\nPRODUCTION DIRECTOR" }
+      ]
+    },
+    "contact_section": {
+      "main_title": "LET'S CREATE SOMETHING EXTRAORDINARY,\nJUST FOR YOU!"
+    }
+  }
