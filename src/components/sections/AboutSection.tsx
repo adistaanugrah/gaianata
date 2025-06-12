@@ -2,7 +2,7 @@
 import React from 'react'; // Import React untuk Fragment
 import FadeInWhenVisible from '../../components/ui/FadeInWhenVisible';
 
-const AboutSection = ({ data }) => {
+const AboutSection = ({ data }: { data: any }) => {
   return (
     <section id="about-us" className="py-16 lg:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">

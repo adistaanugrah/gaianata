@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
-const HeroSection = ({ data }) => {
+const HeroSection = ({ data }: { data: any }) => {
   // HAPUS: const heroImages = [ ... ];
 
   return (

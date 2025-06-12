@@ -3,7 +3,7 @@ import React from 'react';
 import FadeInWhenVisible from '../../components/ui/FadeInWhenVisible';
 
 // --- PERUBAHAN: Terima 'data' dan 'settings' dari props ---
-const ContactSection = ({ data, settings }) => {
+const ContactSection = ({ data, settings }: { data: any, settings: any }) => {
   return (
     <section id="contact" className="py-16 lg:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">

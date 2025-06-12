@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FadeInWhenVisible from '../../components/ui/FadeInWhenVisible';
 
-const PortfolioSection = ({ data }) => {
+const PortfolioSection = ({ data }: { data: any }) => {
   // HAPUS: const portfolioItems = [ ... ];
 
   return (

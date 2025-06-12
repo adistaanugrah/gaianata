@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const TeamSection = ({ data }) => {
+const TeamSection = ({ data }: { data: any }) => {
   // HAPUS: const teamMembers = [ ... ];
 
   return (
