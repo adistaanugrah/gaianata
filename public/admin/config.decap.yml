@@ -1,15 +1,32 @@
-# Backend & Media
+# ===================================================================
+#           KONFIGURASI LENGKAP - CUKUP COPY & PASTE
+# ===================================================================
+
+# -------------------------------------------------------------------
+# Backend & Otentikasi
+# Menggunakan metode server perantara (vencax) yang lebih stabil.
+# -------------------------------------------------------------------
 backend:
   name: github
-  repo: adistaanugrah/gaianata
-  branch: main
-  auth_type: pkce
-  app_id: Ov23lii6NzJATjIpoQCy # Pastikan Client ID ini masih benar
+  repo: adistaanugrah/gaianata # Repositori konten Anda
+  branch: main                 # Branch utama Anda
+  
+  # --- PERUBAHAN UTAMA DI SINI ---
+  # Arahkan CMS untuk menggunakan server otentikasi yang telah Anda deploy.
+  # GANTI URL DI BAWAH INI dengan URL dari proyek "gaianata-auth-server" Anda.
+  base_url: https://gaianata-auth-server.vercel.app
+  auth_endpoint: auth
 
+# -------------------------------------------------------------------
+# Pengaturan Media
+# Di mana gambar akan disimpan dan bagaimana path-nya ditulis.
+# -------------------------------------------------------------------
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
-# Collections: Titik awal untuk mengedit konten
+# -------------------------------------------------------------------
+# Collections: Struktur Konten untuk Editor CMS
+# -------------------------------------------------------------------
 collections:
   # Pengaturan yang berlaku di seluruh situs (Header, Footer, dll)
   - name: "settings"
@@ -46,7 +63,10 @@ collections:
             name: "hero_section"
             widget: "object"
             fields:
-              - { label: "Gambar Slideshow", name: "slideshow_images", widget: "list", field: { label: "Gambar", name: "image", widget: "image" } }
+              - label: "Gambar Slideshow"
+                name: "slideshow_images"
+                widget: "list"
+                field: { label: "Gambar", name: "image", widget: "image" }
               - { label: "Teks Kutipan", name: "quote_text", widget: "textarea" }
               - { label: "Teks Tombol", name: "button_text", widget: "string" }
 
@@ -65,9 +85,6 @@ collections:
             name: "services_section"
             widget: "object"
             fields:
-              # --- PERUBAHAN UTAMA DI SINI ---
-              # Widget list ini sekarang akan menghasilkan array of strings, bukan array of objects.
-              # Ini memastikan konsistensi antara apa yang disimpan CMS dan apa yang diharapkan kode.
               - { label: "Gambar Carousel", name: "carousel_images", widget: "list" }
               - { label: "Paragraf Deskripsi 1", name: "paragraph_1", widget: "text" }
               - { label: "Paragraf Deskripsi 2", name: "paragraph_2", widget: "text" }
@@ -102,14 +119,4 @@ collections:
                 name: "team_members"
                 widget: "list"
                 fields:
-                  - { label: "Foto", name: "photo", widget: "image" }
-                  - { label: "Nama", name: "name", widget: "string" }
-                  - { label: "Jabatan", name: "role", widget: "textarea" }
-          
-          # --- CONTACT SECTION ---
-          - label: "Contact Section"
-            name: "contact_section"
-            widget: "object"
-            fields:
-              - { label: "Judul Utama", name: "main_title", widget: "textarea" }
-              # Informasi kontak akan diambil dari Pengaturan Global
+                  - { label:
