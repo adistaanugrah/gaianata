@@ -4,7 +4,7 @@ backend:
   repo: adistaanugrah/gaianata # GANTI DENGAN username/repo ANDA
   branch: main # Atau branch utama Anda
   auth_type: pkce
-  app_id: Ov23lirqDcp31YT7dHpA # Tempel Client ID dari GitHub OAuth App
+  app_id: Ov23lirKoLxJLm1GjmL7 # Tempel Client ID dari GitHub OAuth App
   # Tidak perlu client secret di sini, karena PKCE lebih aman
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
