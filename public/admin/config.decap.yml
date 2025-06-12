@@ -4,7 +4,7 @@ backend:
   repo: adistaanugrah/gaianata
   branch: main
   auth_type: pkce
-  app_id: Ov23lirqDcp31YT7dHpA # Pastikan Client ID ini masih benar
+  app_id: Ov23lii6NzJATjIpoQCy # Pastikan Client ID ini masih benar
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
