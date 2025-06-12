@@ -3,8 +3,6 @@ import React from 'react';
 import Image from 'next/image';
 
 const TeamSection = ({ data }: { data: any }) => {
-  // HAPUS: const teamMembers = [ ... ];
-
   return (
     <section id="our-team" className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -19,14 +17,13 @@ const TeamSection = ({ data }: { data: any }) => {
             <Image
               src={data.group_image}
               alt="Gaia Nata Team Group Photo"
-              width={800}
-              height={1000}
+              width={800} height={1000}
               className="w-full h-auto object-cover rounded-lg shadow-md"
             />
           </div>
           <div className="w-full md:w-2/5 lg:w-1/2 space-y-10">
-            {/* PERUBAHAN: Gunakan data.team_members */}
-            {data.team_members.map((member, index) => (
+            {/* PERBAIKAN: Tambahkan tipe 'any' dan 'number' */}
+            {data.team_members.map((member: any, index: number) => (
               <div key={index} className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6">
                 <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden shadow-md relative">
                   <Image

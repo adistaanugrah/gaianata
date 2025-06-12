@@ -12,8 +12,6 @@ import 'swiper/css/autoplay';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 const ServicesIntroSection = ({ data }: { data: any }) => {
-  // HAPUS: const carouselImages = [ ... ];
-
   return (
     <section id="our-service" className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -21,22 +19,17 @@ const ServicesIntroSection = ({ data }: { data: any }) => {
           <div className="w-full lg:w-1/2">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={30}
-              slidesPerView={1}
-              navigation
-              pagination={{ clickable: true }}
-              loop={true}
+              spaceBetween={30} slidesPerView={1} navigation pagination={{ clickable: true }} loop={true}
               autoplay={{ delay: 4000, disableOnInteraction: false }}
               className="mySwiper rounded-3xl overflow-hidden shadow-lg h-[250px] sm:h-[300px] md:h-[350px] lg:h-[480px]"
             >
-              {/* PERUBAHAN: Gunakan data.carousel_images */}
-              {data.carousel_images.map((slide, index) => (
+              {/* PERBAIKAN: Tambahkan tipe 'any' dan 'number' */}
+              {data.carousel_images.map((slide: any, index: number) => (
                 <SwiperSlide key={index}>
                   <Image
-                    src={slide.image} // Gunakan slide.image
+                    src={slide.image}
                     alt={`Service example ${index + 1}`}
-                    width={800}
-                    height={600}
+                    width={800} height={600}
                     className="w-full h-full object-cover" 
                   />
                 </SwiperSlide>

@@ -1,5 +1,5 @@
 // src/components/sections/AboutSection.tsx
-import React from 'react'; // Import React untuk Fragment
+import React from 'react';
 import FadeInWhenVisible from '../../components/ui/FadeInWhenVisible';
 
 const AboutSection = ({ data }: { data: any }) => {
@@ -10,8 +10,8 @@ const AboutSection = ({ data }: { data: any }) => {
           <div className="lg:col-span-2 space-y-4">
             <FadeInWhenVisible yOffset={30} duration={0.6}>
               <h3 className="text-3xl sm:text-4xl font-tertiary italic text-gray-800 ">
-                {/* PERUBAHAN: Teks dari data */}
-                {data.greeting_title.split('\n').map((line, i) => <React.Fragment key={i}>{line}<br/></React.Fragment>)}
+                {/* PERBAIKAN: Tambahkan tipe 'string' dan 'number' */}
+                {data.greeting_title.split('\n').map((line: string, i: number) => <React.Fragment key={i}>{line}<br/></React.Fragment>)}
               </h3>
             </FadeInWhenVisible>
             <FadeInWhenVisible yOffset={30} duration={0.6} delay={0.2}>
@@ -21,8 +21,8 @@ const AboutSection = ({ data }: { data: any }) => {
             </FadeInWhenVisible>
           </div>
           <div className="text-lg md:text-xl lg:col-span-3 space-y-6 font-primary text-textCharcoal">
-            {/* PERUBAHAN: Render paragraf dari data.main_text */}
-            {data.main_text.split('\n\n').map((paragraph, index) => (
+            {/* PERBAIKAN: Tambahkan tipe 'string' dan 'number' */}
+            {data.main_text.split('\n\n').map((paragraph: string, index: number) => (
               <FadeInWhenVisible key={index} yOffset={20} duration={0.5} delay={0.3 + index * 0.1}>
                 <p>{paragraph}</p>
               </FadeInWhenVisible>

@@ -5,8 +5,6 @@ import Link from 'next/link';
 import FadeInWhenVisible from '../../components/ui/FadeInWhenVisible';
 
 const PortfolioSection = ({ data }: { data: any }) => {
-  // HAPUS: const portfolioItems = [ ... ];
-
   return (
     <section id="portfolio" className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
@@ -18,7 +16,7 @@ const PortfolioSection = ({ data }: { data: any }) => {
         <div className="mb-12 lg:mb-16">
           <Link
             href={data.portfolio_pdf_file}
-            target="_blank" // Buka di tab baru
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-bold italic hover:bg-brand-primary-hover transition duration-300"
           >
@@ -26,13 +24,13 @@ const PortfolioSection = ({ data }: { data: any }) => {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {/* PERUBAHAN: Gunakan data.portfolio_items */}
-          {data.portfolio_items.map((item, index) => (
+          {/* PERBAIKAN: Tambahkan tipe 'any' dan 'number' */}
+          {data.portfolio_items.map((item: any, index: number) => (
             <div key={index} className="flex flex-col items-center text-center">
               <div className="mb-4 overflow-hidden rounded-3xl shadow-md w-full relative h-[450px] sm:h-[380px] md:h-[320px] lg:h-[400px] xl:h-[450px]">
                 <Image
                   src={item.image}
-                  alt={item.description} // Gunakan deskripsi sebagai alt text
+                  alt={item.description}
                   fill 
                   style={{ objectFit: 'cover' }} 
                   className="transform hover:scale-105 transition duration-500 ease-in-out"
