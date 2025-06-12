@@ -1,7 +1,7 @@
 // src/components/ui/Footer.tsx
 
 // --- PERUBAHAN: Terima props 'settings' ---
-const Footer = ({ settings }) => {
+const Footer = ({ settings }: { settings: any }) => {
   const currentYear = new Date().getFullYear();
 
   // --- PERUBAHAN: Susun teks footer secara dinamis ---

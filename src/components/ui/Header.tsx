@@ -7,7 +7,7 @@ import { IoMailOutline } from "react-icons/io5";
 import { PiPinterestLogo } from "react-icons/pi";
 
 // --- PERUBAHAN: Terima props 'settings' ---
-const Header = ({ settings }) => {
+const Header = ({ settings }: { settings: any }) => {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md py-3 font-secondary">
       <div className="container mx-auto flex flex-col md:flex-row md:items-center md:justify-between px-2 sm:px-4 lg:px-8">
