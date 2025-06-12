@@ -4,14 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- BARIS PERBAIKAN: Secara eksplisit memberitahu CMS lokasi config.yml -->
+  <!-- Tetap pertahankan link ke config.yml -->
   <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
   
   <title>Content Manager</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <!-- HAPUS BARIS SCRIPT netlify-identity-widget.js DARI SINI -->
 </head>
 <body>
-  <!-- Script untuk memuat aplikasi Decap CMS -->
+  <!-- Hanya sisakan script utama Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
