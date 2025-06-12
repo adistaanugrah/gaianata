@@ -1,11 +1,11 @@
 # Backend & Media
 backend:
   name: github
-  repo: adistaanugrah/gaianata # GANTI DENGAN username/repo ANDA
-  branch: main # Atau branch utama Anda
+  repo: adistaanugrah/gaianata
+  branch: main
   auth_type: pkce
-  app_id: Ov23lirKoLxJLm1GjmL7 # Tempel Client ID dari GitHub OAuth App
-  # Tidak perlu client secret di sini, karena PKCE lebih aman
+  app_id: Ov23lirqDcp31YT7dHpA # Pastikan Client ID ini masih benar
+
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
@@ -65,7 +65,10 @@ collections:
             name: "services_section"
             widget: "object"
             fields:
-              - { label: "Gambar Carousel", name: "carousel_images", widget: "list", field: { label: "Gambar", name: "image", widget: "image" } }
+              # --- PERUBAHAN UTAMA DI SINI ---
+              # Widget list ini sekarang akan menghasilkan array of strings, bukan array of objects.
+              # Ini memastikan konsistensi antara apa yang disimpan CMS dan apa yang diharapkan kode.
+              - { label: "Gambar Carousel", name: "carousel_images", widget: "list" }
               - { label: "Paragraf Deskripsi 1", name: "paragraph_1", widget: "text" }
               - { label: "Paragraf Deskripsi 2", name: "paragraph_2", widget: "text" }
               - { label: "Teks Tombol", name: "button_text", widget: "string" }
