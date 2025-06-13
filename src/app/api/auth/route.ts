@@ -1,8 +1,10 @@
 // src/app/api/auth/[...path]/route.ts
 
 import { NextRequest, NextResponse } from 'next/server';
-// --- PERBAIKAN FINAL: Impor seluruh namespace untuk kompatibilitas CJS/ESM ---
-import * as simpleOauth2 from 'simple-oauth2';
+
+// --- STRATEGI BARU: Gunakan require() untuk memaksa pemuatan modul CommonJS ---
+// Ini adalah cara yang paling andal untuk menangani library CJS lama di lingkungan ESM.
+const { create, AuthorizationCode } = require('simple-oauth2');
 
 // Konfigurasi GitHub OAuth dari Environment Variables
 const githubConfig = {
@@ -13,9 +15,8 @@ const githubConfig = {
   authorizePath: '/login/oauth/authorize',
 };
 
-// --- PERBAIKAN FINAL: Panggil 'create' sebagai metode dari objek yang diimpor ---
-// Ini adalah cara paling konsisten untuk memanggil fungsi dari modul yang diimpor sebagai namespace.
-const oauth2 = simpleOauth2.create({
+// Panggil fungsi 'create' yang sudah di-destrukturisasi dari require()
+const oauth2 = create({
   client: {
     id: githubConfig.clientID,
     secret: githubConfig.clientSecret,
