@@ -1,35 +1,26 @@
 // src/app/api/auth/[...path]/route.ts
 
 import { NextRequest, NextResponse } from 'next/server';
-
-// --- STRATEGI BARU: Gunakan require() untuk memaksa pemuatan modul CommonJS ---
-// Ini adalah cara yang paling andal untuk menangani library CJS lama di lingkungan ESM.
-const { create, AuthorizationCode } = require('simple-oauth2');
-
-// Konfigurasi GitHub OAuth dari Environment Variables
-const githubConfig = {
-  clientID: process.env.GITHUB_CLIENT_ID!,
-  clientSecret: process.env.GITHUB_CLIENT_SECRET!,
-  tokenHost: 'https://github.com',
-  tokenPath: '/login/oauth/access_token',
-  authorizePath: '/login/oauth/authorize',
-};
-
-// Panggil fungsi 'create' yang sudah di-destrukturisasi dari require()
-const oauth2 = create({
-  client: {
-    id: githubConfig.clientID,
-    secret: githubConfig.clientSecret,
-  },
-  auth: {
-    tokenHost: githubConfig.tokenHost,
-    tokenPath: githubConfig.tokenPath,
-    authorizePath: githubConfig.authorizePath,
-  },
-});
+// Kita tetap gunakan require untuk stabilitas impor
+const { create } = require('simple-oauth2');
 
 // Ini adalah fungsi handler utama untuk semua rute di bawah /api/auth
 export async function GET(request: NextRequest) {
+  
+  // --- PERBAIKAN UTAMA: Inisialisasi oauth2 dipindahkan ke dalam handler ---
+  // Kode ini sekarang hanya berjalan saat API di-request, bukan saat build.
+  const oauth2 = create({
+    client: {
+      id: process.env.GITHUB_CLIENT_ID!,
+      secret: process.env.GITHUB_CLIENT_SECRET!,
+    },
+    auth: {
+      tokenHost: 'https://github.com',
+      tokenPath: '/login/oauth/access_token',
+      authorizePath: '/login/oauth/authorize',
+    },
+  });
+
   const url = new URL(request.url);
   const pathParts = url.pathname.split('/');
   const provider = pathParts[3]; // 'auth' atau 'callback'
