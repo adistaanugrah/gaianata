@@ -19,7 +19,7 @@ const ServicesIntroSection = ({ data }: { data: any }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
           <div className="w-full lg:w-1/2">
-            <Swiper modules={[Navigation, Pagination, Autoplay]} spaceBetween={30} slidesPerView={1} navigation pagination={{ clickable: true }} loop={true} autoplay={{ delay: 4000, disableOnInteraction: false }} className="mySwiper rounded-3xl overflow-hidden shadow-lg h-[250px] sm:h-[300px] md:h-[350px] lg:h-[560px] aspect-[5/6]">
+            <Swiper modules={[Navigation, Pagination, Autoplay]} spaceBetween={30} slidesPerView={1} navigation pagination={{ clickable: true }} loop={true} autoplay={{ delay: 4000, disableOnInteraction: false }} className="mySwiper rounded-3xl overflow-hidden shadow-lg w-full h-[450px] sm:h-[380px] md:h-[320px] lg:h-[px] xl:h-[450px] aspect-[5/6]">
               {data.carousel_images?.map((imageAsset: any, index: number) => {
                 const imageUrl = urlForImage(imageAsset)?.url();
                 return (
