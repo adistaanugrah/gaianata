@@ -1,14 +1,16 @@
 // src/app/api/auth/[...path]/route.ts
 
 import { NextRequest, NextResponse } from 'next/server';
-// Kita tetap gunakan require untuk stabilitas impor
 const { create } = require('simple-oauth2');
 
-// Ini adalah fungsi handler utama untuk semua rute di bawah /api/auth
+// --- PERBAIKAN FINAL: Eksplisit memberitahu Next.js bahwa route ini DINAMIS ---
+// Ini akan mencegah Next.js mencoba melakukan prerender atau export statis pada API route ini.
+export const dynamic = 'force-dynamic';
+
+// Fungsi handler utama
 export async function GET(request: NextRequest) {
   
-  // --- PERBAIKAN UTAMA: Inisialisasi oauth2 dipindahkan ke dalam handler ---
-  // Kode ini sekarang hanya berjalan saat API di-request, bukan saat build.
+  // Inisialisasi oauth2 di dalam handler untuk memastikan env vars tersedia
   const oauth2 = create({
     client: {
       id: process.env.GITHUB_CLIENT_ID!,
@@ -25,10 +27,8 @@ export async function GET(request: NextRequest) {
   const pathParts = url.pathname.split('/');
   const provider = pathParts[3]; // 'auth' atau 'callback'
 
-  // Set header untuk mencegah caching oleh browser
   const headers = { 'Cache-Control': 'no-cache, no-store, must-revalidate' };
 
-  // 1. Mengarahkan pengguna ke halaman login GitHub
   if (provider === 'auth') {
     const authorizationUri = oauth2.authorizationCode.getUri({
       redirect_uri: `${process.env.OAUTH_HOST}/api/auth/callback`,
@@ -37,7 +37,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(authorizationUri);
   }
 
-  // 2. Menangani callback dari GitHub setelah login berhasil
   if (provider === 'callback') {
     const code = url.searchParams.get('code');
     if (!code) {
@@ -53,7 +52,6 @@ export async function GET(request: NextRequest) {
       const accessToken = await oauth2.authorizationCode.getToken(tokenParams);
       const token = accessToken.token.access_token;
 
-      // Kirim token kembali ke halaman callback Decap CMS
       const responseBody = `
         <!DOCTYPE html>
         <html>
@@ -82,6 +80,5 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  // Jika rute tidak dikenali
   return new NextResponse('Invalid auth route', { status: 404, headers });
 }
