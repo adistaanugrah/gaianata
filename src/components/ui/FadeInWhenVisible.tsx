@@ -5,25 +5,25 @@ import { useEffect, useRef, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
-  delay?: number;      // Delay sebelum animasi dimulai (detik)
-  duration?: number;   // Durasi animasi (detik)
-  yOffset?: number;    // Jarak slide vertikal (pixel)
-  xOffset?: number;    // Jarak slide horizontal (pixel)
-  threshold?: number;  // Seberapa banyak elemen harus terlihat sebelum animasi (0-1)
-  className?: string;  // Kelas CSS tambahan jika perlu
+  delay?: number;
+  duration?: number;
+  yOffset?: number;
+  xOffset?: number;
+  threshold?: number;
+  className?: string;
 }
 
 const FadeInWhenVisible = ({
   children,
   delay = 0,
   duration = 0.5,
-  yOffset = 20, // Default slide up sedikit
+  yOffset = 20,
   xOffset = 0,
-  threshold = 0.2, // Animate saat 20% terlihat
+  threshold = 0.2,
   className = "",
 }: Props) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: threshold, once: true }); // Trigger hanya sekali
+  const isInView = useInView(ref, { amount: threshold, once: true });
   const mainControls = useAnimation();
 
   useEffect(() => {

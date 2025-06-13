@@ -1,27 +1,24 @@
 // src/components/ui/Header.tsx
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaPinterestP, FaInstagram, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 import { IoMailOutline } from "react-icons/io5";
 import { PiPinterestLogo } from "react-icons/pi";
+import { urlForImage } from '@/sanity/image';
 
-// --- PERUBAHAN: Terima props 'settings' ---
 const Header = ({ settings }: { settings: any }) => {
+  if (!settings) return null;
+  const social = settings.social_links || {};
+  const logoUrl = urlForImage(settings.site_logo)?.url();
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md py-3 font-secondary">
       <div className="container mx-auto flex flex-col md:flex-row md:items-center md:justify-between px-2 sm:px-4 lg:px-8">
         <div className="w-full flex justify-center py-2 md:order-2 md:flex-shrink-0 md:py-0 md:px-2 lg:px-4 md:w-36 lg:w-48 xl:w-56">
           <Link href="#home" className="block w-32 md:w-full">
-            {/* --- PERUBAHAN: Gunakan data dari props --- */}
-            <Image
-              src={settings.site_logo}
-              alt="Gaia Nata Logo"
-              width={704}
-              height={352}
-              className="h-auto w-full"
-              priority
-            />
+            {logoUrl && (
+              <Image src={logoUrl} alt="Gaia Nata Logo" width={704} height={352} className="h-auto w-full" priority />
+            )}
           </Link>
         </div>
         <nav className="w-full pt-1 pb-2 md:order-1 md:flex-1 md:min-w-0 md:pt-0 md:pb-0">
@@ -31,11 +28,10 @@ const Header = ({ settings }: { settings: any }) => {
             <li className="md:hidden"><Link href="#our-team" className="hover:text-brandPurpleHover whitespace-nowrap">Our Team</Link></li>
             <li className="md:hidden"><Link href="#contact" className="hover:text-textPurpleHover whitespace-nowrap">Our Contact</Link></li>
             <li className="md:hidden flex items-center space-x-2 pl-1">
-              {/* --- PERUBAHAN: Gunakan data dari props --- */}
-              <a href={settings.social_links.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaInstagram size={14} /></a>
-              <a href={settings.social_links.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaWhatsapp size={14} /></a>
+              <a href={social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaInstagram size={14} /></a>
+              <a href={social.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaWhatsapp size={14} /></a>
               <a href={`mailto:${settings.contact_email}`} className="hover:text-textPurpleHover"><FaEnvelope size={14} /></a>
-              <a href={settings.social_links.pinterest} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaPinterestP size={14} /></a>
+              <a href={social.pinterest} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaPinterestP size={14} /></a>
             </li>
           </ul>
         </nav>
@@ -47,11 +43,10 @@ const Header = ({ settings }: { settings: any }) => {
             </ul>
           </nav>
           <div className="flex space-x-2 pl-3 items-center text-gray-600">
-            {/* --- PERUBAHAN: Gunakan data dari props --- */}
-            <a href={settings.social_links.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaInstagram size={14} /></a>
-            <a href={settings.social_links.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaWhatsapp size={14} /></a>
+            <a href={social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaInstagram size={14} /></a>
+            <a href={social.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaWhatsapp size={14} /></a>
             <a href={`mailto:${settings.contact_email}`} className="hover:text-textPurpleHover"><IoMailOutline size={15} /></a>
-            <a href={settings.social_links.pinterest} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><PiPinterestLogo size={15} /></a>
+            <a href={social.pinterest} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><PiPinterestLogo size={15} /></a>
           </div>
         </div>
       </div>

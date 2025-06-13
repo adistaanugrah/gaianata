@@ -1,10 +1,8 @@
 // src/app/page.tsx
 
-import fs from 'fs';
-import path from 'path';
+import { client } from '@/sanity/client';
+import { groq } from 'next-sanity';
 
-// --- BAGIAN YANG HILANG SEBELUMNYA ---
-// Pastikan semua komponen section diimpor di sini.
 import HeroSection from '@/components/sections/HeroSection';
 import ServicesIntroSection from '@/components/sections/ServicesIntroSection';
 import AboutSection from '@/components/sections/AboutSection';
@@ -12,22 +10,22 @@ import PortfolioSection from '@/components/sections/PortfolioSection';
 import TeamSection from '@/components/sections/TeamSection';
 import ContactSection from '@/components/sections/ContactSection';
 
-// Fungsi untuk membaca data JSON
-const getHomepageData = () => {
-  const filePath = path.join(process.cwd(), 'src/content/homepage.json');
-  const fileContent = fs.readFileSync(filePath, 'utf8');
-  return JSON.parse(fileContent);
-};
+// Query untuk mengambil semua data dalam satu panggilan
+const query = groq`{
+  "pageData": *[_type == "homepage"][0],
+  "settingsData": *[_type == "settings"][0]
+}`;
 
-const getSettingsData = () => {
-  const filePath = path.join(process.cwd(), 'src/content/settings.json');
-  const fileContent = fs.readFileSync(filePath, 'utf8');
-  return JSON.parse(fileContent);
-};
+// Kita tandai sebagai dinamis untuk memastikan data selalu fresh
+export const revalidate = 10; // Revalidate setiap 10 detik
 
-export default function Home() {
-  const pageData = getHomepageData();
-  const settingsData = getSettingsData(); // Ambil settings juga
+export default async function Home() {
+  const { pageData, settingsData } = await client.fetch(query);
+
+  // Fallback jika data tidak ditemukan
+  if (!pageData || !settingsData) {
+    return <div>Data tidak ditemukan. Silakan isi konten di Sanity Studio.</div>;
+  }
 
   return (
     <>
