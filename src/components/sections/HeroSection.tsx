@@ -42,7 +42,7 @@ const HeroSection = ({ data }: { data: any }) => {
           <span aria-hidden="true" className="absolute font-tertiary text-gray-200 z-0 pointer-events-none" style={{ fontSize: 'clamp(15rem, 30vw, 22rem)', bottom: '-8rem', right: '-2rem', lineHeight: '0.6' }}>”</span>
         </div>
         <Link href="#our-service" className="relative z-20 mt-6 sm:mt-8 md:mt-10">
-          <button className="bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-bold italic hover:bg-brand-primary-hover transition duration-300">{data.button_text}</button>
+          <button className="bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-tertiary italic hover:bg-brand-primary-hover transition duration-300">{data.button_text}</button>
         </Link>
       </div>
     </section>
