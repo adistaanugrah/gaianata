@@ -1,8 +1,9 @@
 // src/app/api/auth/[...path]/route.ts
 
 import { NextRequest, NextResponse } from 'next/server';
-import { simpleOauth2 } from 'simple-oauth2';
-import cookie from 'cookie';
+// --- PERUBAHAN DI SINI ---
+import simpleOauth2 from 'simple-oauth2'; 
+// Kita mengimpor seluruh modul sebagai 'simpleOauth2'
 
 // Konfigurasi GitHub OAuth dari Environment Variables
 const githubConfig = {
@@ -13,8 +14,9 @@ const githubConfig = {
   authorizePath: '/login/oauth/authorize',
 };
 
-// Helper untuk membuat klien OAuth2
-const oauth2 = new simpleOauth2.AuthorizationCode({
+// --- PERUBAHAN DI SINI ---
+// Sekarang kita memanggil 'create' dari modul yang sudah diimpor
+const oauth2 = simpleOauth2.create({
   client: {
     id: githubConfig.clientID,
     secret: githubConfig.clientSecret,
@@ -37,9 +39,9 @@ export async function GET(request: NextRequest) {
 
   // 1. Mengarahkan pengguna ke halaman login GitHub
   if (provider === 'auth') {
-    const authorizationUri = oauth2.authorizeURL({
-      redirect_uri: `${process.env.OAUTH_HOST}/api/auth/callback`, // URL callback kita sendiri
-      scope: 'repo,user', // Scope izin yang diminta
+    const authorizationUri = oauth2.authorizationCode.getUri({
+      redirect_uri: `${process.env.OAUTH_HOST}/api/auth/callback`,
+      scope: 'repo,user',
     });
     return NextResponse.redirect(authorizationUri);
   }
@@ -52,12 +54,13 @@ export async function GET(request: NextRequest) {
     }
 
     try {
-      const accessToken = await oauth2.getToken({
+      const tokenParams = {
         code: code,
         redirect_uri: `${process.env.OAUTH_HOST}/api/auth/callback`,
-      });
-
-      const { token } = oauth2.createToken(accessToken);
+      };
+      
+      const accessToken = await oauth2.authorizationCode.getToken(tokenParams);
+      const token = accessToken.token.access_token;
 
       // Kirim token kembali ke halaman callback Decap CMS
       const responseBody = `
@@ -69,7 +72,7 @@ export async function GET(request: NextRequest) {
           <script>
             window.opener.postMessage('authorization:github:success:${JSON.stringify({
               provider: "github",
-              token: "${token.access_token}"
+              token: "${token}"
             })}', '*')
             window.close()
           </script>
@@ -83,7 +86,7 @@ export async function GET(request: NextRequest) {
       });
 
     } catch (error: any) {
-      console.error('Access Token Error', error.message);
+      console.error('Access Token Error', error);
       return new NextResponse(error.message, { status: 500 });
     }
   }
