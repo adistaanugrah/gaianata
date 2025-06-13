@@ -1,5 +1,5 @@
 # ===================================================================
-#           KONFIGURASI LENGKAP & BENAR - VERSI FINAL
+#           KONFIGURASI BARU - Menggunakan API Route Internal
 # ===================================================================
 
 # -------------------------------------------------------------------
@@ -10,10 +10,9 @@ backend:
   repo: adistaanugrah/gaianata # Repositori konten Anda
   branch: main                 # Branch utama Anda
   
-  # Arahkan CMS untuk menggunakan server otentikasi yang telah Anda deploy.
-  # GANTI URL DI BAWAH INI dengan URL dari proyek "gaianata-auth-server" Anda.
-  base_url: https://gaianata-auth-server.vercel.app/ # CONTOH URL, GANTI DENGAN MILIK ANDA 
-  auth_endpoint: auth
+  # BARU: Arahkan ke API Route di dalam proyek Next.js Anda sendiri
+  base_url: https://gaianata.id
+  auth_endpoint: /api/auth
 
 # -------------------------------------------------------------------
 # Pengaturan Media
