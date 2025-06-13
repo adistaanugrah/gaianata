@@ -27,7 +27,7 @@ const PortfolioSection = ({ data }: { data: any }) => {
                   <div className="mb-4 overflow-hidden rounded-3xl shadow-md w-full relative h-[450px] sm:h-[380px] md:h-[320px] lg:h-[400px] xl:h-[450px]">
                     {itemImageUrl && <Image src={itemImageUrl} alt={item.description} fill style={{ objectFit: 'cover' }} className="transform hover:scale-105 transition duration-500 ease-in-out" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />}
                   </div>
-                  <h1 className="text-3xl sm:text-3xl font-semibold mb-3"><span className="font-primary text-gray-700">{item.title_bold}</span><span className="font-primary text-gray-500">{item.title_regular}</span></h1>
+                  <h1 className="text-3xl sm:text-3xl font-primary mb-3"><span className="font-primary text-gray-500">{item.title_bold}</span><span className="font-primary text-gray-400">{item.title_regular}</span></h1>
                   <p className="font-secondary text-md text-brandbg2-primary leading-relaxed max-w-xs mx-auto px-1">{item.description}</p>
                 </div>
               </FadeInWhenVisible>
