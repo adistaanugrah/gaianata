@@ -1,9 +1,8 @@
 // src/app/api/auth/[...path]/route.ts
 
 import { NextRequest, NextResponse } from 'next/server';
-// --- PERUBAHAN DI SINI ---
-import simpleOauth2 from 'simple-oauth2'; 
-// Kita mengimpor seluruh modul sebagai 'simpleOauth2'
+// --- PERBAIKAN: Impor 'create' secara spesifik, bukan seluruh modul ---
+import { create } from 'simple-oauth2';
 
 // Konfigurasi GitHub OAuth dari Environment Variables
 const githubConfig = {
@@ -14,9 +13,8 @@ const githubConfig = {
   authorizePath: '/login/oauth/authorize',
 };
 
-// --- PERUBAHAN DI SINI ---
-// Sekarang kita memanggil 'create' dari modul yang sudah diimpor
-const oauth2 = simpleOauth2.create({
+// --- PERBAIKAN: Panggil fungsi 'create' secara langsung ---
+const oauth2 = create({
   client: {
     id: githubConfig.clientID,
     secret: githubConfig.clientSecret,
@@ -58,7 +56,7 @@ export async function GET(request: NextRequest) {
         code: code,
         redirect_uri: `${process.env.OAUTH_HOST}/api/auth/callback`,
       };
-      
+
       const accessToken = await oauth2.authorizationCode.getToken(tokenParams);
       const token = accessToken.token.access_token;
 
@@ -79,7 +77,7 @@ export async function GET(request: NextRequest) {
         </head>
         <body></body>
         </html>`;
-        
+
       return new NextResponse(responseBody, {
         status: 200,
         headers: { 'Content-Type': 'text/html', ...headers },
