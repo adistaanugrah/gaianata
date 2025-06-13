@@ -1,8 +1,8 @@
 // src/app/api/auth/[...path]/route.ts
 
 import { NextRequest, NextResponse } from 'next/server';
-// --- PERBAIKAN: Impor 'create' secara spesifik, bukan seluruh modul ---
-import { create } from 'simple-oauth2';
+// --- PERBAIKAN FINAL: Impor seluruh namespace untuk kompatibilitas CJS/ESM ---
+import * as simpleOauth2 from 'simple-oauth2';
 
 // Konfigurasi GitHub OAuth dari Environment Variables
 const githubConfig = {
@@ -13,8 +13,9 @@ const githubConfig = {
   authorizePath: '/login/oauth/authorize',
 };
 
-// --- PERBAIKAN: Panggil fungsi 'create' secara langsung ---
-const oauth2 = create({
+// --- PERBAIKAN FINAL: Panggil 'create' sebagai metode dari objek yang diimpor ---
+// Ini adalah cara paling konsisten untuk memanggil fungsi dari modul yang diimpor sebagai namespace.
+const oauth2 = simpleOauth2.create({
   client: {
     id: githubConfig.clientID,
     secret: githubConfig.clientSecret,
