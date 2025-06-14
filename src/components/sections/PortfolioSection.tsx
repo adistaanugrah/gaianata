@@ -65,7 +65,7 @@ const PortfolioSection = ({ data, settings }: { data: any, settings: any }) => {
                       )}
                     </div>
                     <h1 className="text-3xl sm:text-3xl font-semibold mb-3">
-                      <span className="font-primary text-black">{item.title_bold}</span>
+                      <span className="font-primary text-textCharcoal">{item.title_bold}</span>
                       <span className="font-primary text-brandbg2-primary">{item.title_regular}</span>
                     </h1>
                     <p className="font-secondary italic text-md text-brandbg2-primary leading-relaxed max-w-xs mx-auto px-1">
