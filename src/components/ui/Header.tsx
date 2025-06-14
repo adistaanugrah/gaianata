@@ -60,7 +60,7 @@ const Header = ({ settings }: { settings: any }) => {
               <li><StyledLink href="#contact" boldText="our" regularText="contact" /></li>
             </ul>
           </nav>
-          <div className="flex -space-x-5 pl-3 items-center text-gray-600">
+          <div className="flex space-x-2 pl-3 items-center text-gray-600">
             <a href={social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaInstagram size={15} /></a>
             <a href={social.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaWhatsapp size={15} /></a>
             <a href={`mailto:${settings.contact_email}`} className="hover:text-textPurpleHover"><IoMailOutline size={16} /></a>
