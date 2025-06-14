@@ -12,7 +12,7 @@ const Header = ({ settings }: { settings: any }) => {
   const logoUrl = urlForImage(settings.site_logo)?.url();
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md py-3 font-secondary">
+    <header className="sticky top-0 z-50 bg-white shadow-md py-3 font-primary">
       <div className="container mx-auto flex flex-col md:flex-row md:items-center md:justify-between px-2 sm:px-4 lg:px-8">
         <div className="w-full flex justify-center py-2 md:order-2 md:flex-shrink-0 md:py-0 md:px-2 lg:px-4 md:w-36 lg:w-48 xl:w-56">
           <Link href="#home" className="block w-32 md:w-full">
@@ -24,7 +24,7 @@ const Header = ({ settings }: { settings: any }) => {
         <nav className="w-full pt-1 pb-2 md:order-1 md:flex-1 md:min-w-0 md:pt-0 md:pb-0">
           <ul className="flex flex-wrap justify-center items-center md:justify-start space-x-2 sm:space-x-2.5 md:space-x-3 text-[11px] sm:text-xs lg:text-sm tracking-normal sm:tracking-wider text-textDarkGray gap-y-2 md:gap-y-1">
             <li><Link href="#about-us" className="hover:text-textPurpleHover whitespace-nowrap">About Us</Link></li>
-            <li><Link href="#our-service" className="hover:text-textPurpleHover whitespace-nowrap">Our Services</Link></li>
+            <li><Link href="#portfolio" className="hover:text-textPurpleHover whitespace-nowrap">Our Services</Link></li>
             <li className="md:hidden"><Link href="#our-team" className="hover:text-brandPurpleHover whitespace-nowrap">Our Team</Link></li>
             <li className="md:hidden"><Link href="#contact" className="hover:text-textPurpleHover whitespace-nowrap">Our Contact</Link></li>
             <li className="md:hidden flex items-center space-x-2 pl-1">
