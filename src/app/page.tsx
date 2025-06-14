@@ -21,12 +21,23 @@ export const revalidate = 10;
 
 export default async function Home() {
   const { pageData, settingsData } = await client.fetch(query);
-  // ...
+
+  // Fallback jika data tidak ditemukan
+  if (!pageData || !settingsData) {
+    return <div>Data tidak ditemukan. Silakan isi konten di Sanity Studio.</div>;
+  }
+
   return (
     <>
-      {/* ... */}
+      <HeroSection data={pageData.hero_section} />
+      <ServicesIntroSection data={pageData.services_section} />
+      <AboutSection data={pageData.about_section} />
+      
+      {/* --- PERUBAHAN ADA DI BARIS INI --- */}
       <PortfolioSection data={pageData.portfolio_section} settings={settingsData} />
-      {/* ... */}
+      
+      <TeamSection data={pageData.team_section} />
+      <ContactSection data={pageData.contact_section} settings={settingsData} />
     </>
   );
 }
