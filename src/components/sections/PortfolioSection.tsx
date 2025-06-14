@@ -16,24 +16,33 @@ const getFileUrl = (fileRef: string) => {
     return `https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${ref}`;
 }
 
-// --- PERBAIKAN DI SINI: Terima props 'settings' ---
-const PortfolioSection = ({ data, settings }: { data: any, settings: any }) => {
+const PortfolioSection = ({ data }: { data: any }) => {
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
     sources: [] as string[],
   });
 
-  if (!data || !settings) return null;
+  if (!data) return null;
   
   const pdfUrl = data.portfolio_pdf_file?.asset?._ref ? getFileUrl(data.portfolio_pdf_file.asset._ref) : '#';
 
+  // --- FUNGSI DIPERBAIKI AGAR LEBIH AMAN ---
   function openLightbox(galleryImages: any[]) {
+    // 1. Periksa apakah galeri ada dan tidak kosong
     if (!galleryImages || galleryImages.length === 0) return;
-    const imageSources = galleryImages.map(img => urlForImage(img)?.url()).filter(Boolean) as string[];
-    setLightboxController({
-      toggler: !lightboxController.toggler,
-      sources: imageSources,
-    });
+
+    // 2. Buat URL dan pastikan hanya URL yang valid (bukan null/undefined) yang masuk
+    const imageSources = galleryImages
+      .map(img => urlForImage(img)?.url()) // Buat URL untuk setiap gambar
+      .filter((url): url is string => !!url); // Filter keluar nilai null/undefined
+
+    // 3. Hanya buka lightbox jika ada setidaknya satu sumber gambar yang valid
+    if (imageSources.length > 0) {
+      setLightboxController({
+        toggler: !lightboxController.toggler,
+        sources: imageSources,
+      });
+    }
   }
 
   return (
@@ -55,10 +64,12 @@ const PortfolioSection = ({ data, settings }: { data: any, settings: any }) => {
               {data.button_text}
             </Link>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {data.portfolio_items?.map((item: any, index: number) => {
               const itemImageUrl = urlForImage(item.image)?.url();
               const hasGallery = item.gallery_images && item.gallery_images.length > 0;
+
               return (
                 <FadeInWhenVisible key={index} yOffset={50} delay={index * 0.1}>
                   <div
