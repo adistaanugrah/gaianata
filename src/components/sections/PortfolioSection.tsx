@@ -1,6 +1,6 @@
 // src/components/sections/PortfolioSection.tsx
 
-"use client"; // Komponen ini interaktif, jadi perlu 'use client'
+"use client";
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -8,7 +8,6 @@ import Link from 'next/link';
 import FadeInWhenVisible from '../ui/FadeInWhenVisible';
 import { urlForImage } from '@/sanity/image';
 
-// Impor FsLightbox
 import FsLightbox from 'fslightbox-react';
 
 const getFileUrl = (fileRef: string) => {
@@ -17,23 +16,20 @@ const getFileUrl = (fileRef: string) => {
     return `https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${ref}`;
 }
 
-const PortfolioSection = ({ data }: { data: any }) => {
-  // State untuk mengontrol lightbox
+// --- PERBAIKAN DI SINI: Terima props 'settings' ---
+const PortfolioSection = ({ data, settings }: { data: any, settings: any }) => {
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
-    sources: [] as string[], // Tipe data sekarang adalah array of strings (URL)
+    sources: [] as string[],
   });
 
-  if (!data) return null;
+  if (!data || !settings) return null;
   
   const pdfUrl = data.portfolio_pdf_file?.asset?._ref ? getFileUrl(data.portfolio_pdf_file.asset._ref) : '#';
 
-  // Fungsi untuk membuka lightbox dengan gambar yang benar
   function openLightbox(galleryImages: any[]) {
     if (!galleryImages || galleryImages.length === 0) return;
-
     const imageSources = galleryImages.map(img => urlForImage(img)?.url()).filter(Boolean) as string[];
-
     setLightboxController({
       toggler: !lightboxController.toggler,
       sources: imageSources,
@@ -59,17 +55,14 @@ const PortfolioSection = ({ data }: { data: any }) => {
               {data.button_text}
             </Link>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {data.portfolio_items?.map((item: any, index: number) => {
               const itemImageUrl = urlForImage(item.image)?.url();
               const hasGallery = item.gallery_images && item.gallery_images.length > 0;
-
               return (
                 <FadeInWhenVisible key={index} yOffset={50} delay={index * 0.1}>
                   <div
                     className={`flex flex-col items-center text-center ${hasGallery ? 'cursor-pointer group' : ''}`}
-                    // --- PERUBAHAN LOGIKA KLIK DI SINI ---
                     onClick={() => openLightbox(item.gallery_images)}
                   >
                     <div className="mb-4 overflow-hidden rounded-3xl shadow-md w-full relative h-[450px] sm:h-[380px] md:h-[320px] lg:h-[400px] xl:h-[450px] group-hover:brightness-90 transition-all duration-300">
@@ -99,12 +92,9 @@ const PortfolioSection = ({ data }: { data: any }) => {
         </div>
       </section>
 
-      {/* --- RENDER KOMPONEN FSLIGHTBOX --- */}
       <FsLightbox
         toggler={lightboxController.toggler}
         sources={lightboxController.sources}
-        // Anda bisa menambahkan props lain di sini untuk kustomisasi lebih lanjut
-        // type="image" // Otomatis terdeteksi, tapi bisa ditambahkan untuk kejelasan
       />
     </>
   );
