@@ -69,7 +69,7 @@ const ServicesIntroSection = ({ data }: { data: any }) => {
               </p>
             </FadeInWhenVisible>
             <Link href="#portfolio" className="mt-8 md:mt-10 inline-block">
-              <button className="inline-block bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-bold italic hover:bg-brand-primary-hover transition duration-300">
+              <button className="inline-block bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-tertiary italic hover:bg-brand-primary-hover transition duration-300">
                 {data.button_text}
               </button>
             </Link>

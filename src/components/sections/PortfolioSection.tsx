@@ -33,7 +33,7 @@ const PortfolioSection = ({ data, settings }: { data: any, settings: any }) => {
             href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-bold italic hover:bg-brand-primary-hover transition duration-300"
+            className="inline-block bg-brand-primary text-white px-8 py-3 rounded-3xl text-sm tracking-wider font-tertiary italic hover:bg-brand-primary-hover transition duration-300"
           >
             {data.button_text}
           </Link>

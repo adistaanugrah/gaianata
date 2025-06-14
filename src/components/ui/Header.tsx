@@ -15,13 +15,13 @@ const Header = ({ settings }: { settings: any }) => {
   // Komponen bantu untuk link dengan dua gaya
   const StyledLink = ({ href, boldText, regularText }: { href: string, boldText: string, regularText: string }) => (
     <Link href={href} className="hover:opacity-75 transition-opacity duration-200 whitespace-nowrap">
-      <span className="font-bold text-gray-600">{boldText}</span>
+      <span className="font-primary text-gray-700">{boldText}</span>
       <span className="font-primary text-gray-400">{regularText}</span>
     </Link>
   );
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md py-3 font-secondary">
+    <header className="sticky top-0 z-50 bg-white shadow-md py-3 font-primary">
       <div className="container mx-auto flex flex-col md:flex-row md:items-center md:justify-between px-2 sm:px-4 lg:px-8">
         <div className="w-full flex justify-center py-2 md:order-2 md:flex-shrink-0 md:py-0 md:px-2 lg:px-4 md:w-36 lg:w-48 xl:w-56">
           <Link href="#home" className="block w-32 md:w-full">
@@ -40,10 +40,10 @@ const Header = ({ settings }: { settings: any }) => {
             <StyledLink href="#our-team" boldText="our" regularText="team" />
             <StyledLink href="#contact" boldText="our" regularText="contact" />
             <div className="flex items-center space-x-0.5 text-gray-600">
-              <a href={social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaInstagram size={15} /></a>
-              <a href={social.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaWhatsapp size={15} /></a>
-              <a href={`mailto:${settings.contact_email}`} className="hover:text-textPurpleHover"><IoMailOutline size={16} /></a>
-              <a href={social.pinterest} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><PiPinterestLogo size={16} /></a>
+              <a href={social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaInstagram size={13} /></a>
+              <a href={social.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><FaWhatsapp size={13} /></a>
+              <a href={`mailto:${settings.contact_email}`} className="hover:text-textPurpleHover"><IoMailOutline size={14} /></a>
+              <a href={social.pinterest} target="_blank" rel="noopener noreferrer" className="hover:text-textPurpleHover"><PiPinterestLogo size={14} /></a>
             </div>
           </div>
           {/* Untuk Desktop (md dan lebih besar) */}
