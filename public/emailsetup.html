@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Setup Email Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .slide {
+            min-height: 90vh;
+            padding: 4rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .slide-content {
+            max-width: 900px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <!-- Navigasi Tetap -->
+    <nav class="sticky top-0 bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="text-lg font-bold text-slate-800">Panduan Email</div>
+                <div class="hidden md:flex space-x-6 text-sm font-semibold">
+                    <a href="#slide-1" class="text-slate-600 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#slide-4" class="text-slate-600 hover:text-blue-600 transition-colors">Ganti Password</a>
+                    <a href="#slide-6" class="text-slate-600 hover:text-blue-600 transition-colors">Setup Mobile</a>
+                    <a href="#slide-11" class="text-slate-600 hover:text-blue-600 transition-colors">Integrasi Gmail</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Slide 1: Halaman Judul -->
+        <section id="slide-1" class="slide bg-white text-center">
+            <div class="slide-content">
+                <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1200&auto=format&fit=crop" alt="[Gambar meja kerja dengan laptop]" class="w-full max-w-lg mx-auto rounded-lg shadow-xl mb-8" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=Meja+Kerja';">
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-3">Setup hello@gaianata.id</h1>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Panduan ini akan membantu cara mengatur email baru di berbagai device.</p>
+                <div class="mt-8">
+                    <p class="font-semibold">Email:</p>
+                    <p class="text-2xl font-mono bg-slate-100 px-4 py-2 rounded-md inline-block mt-2">hello@gaianata.id</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Informasi Akun -->
+        <section id="slide-2" class="slide">
+            <div class="slide-content text-center">
+                <h2 class="text-3xl font-bold mb-8">Informasi Akun Email</h2>
+                <div class="grid md:grid-cols-3 gap-6 text-left">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-lg mb-2">Alamat Email</h3>
+                        <p class="font-mono text-blue-700">hello@gaianata.id</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-lg mb-2">Password Awal</h3>
+                        <p class="font-mono text-blue-700">Gaianata@123</p>
+                        <p class="text-xs text-red-600 mt-2">*(Sangat disarankan untuk segera mengganti password ini demi keamanan)*</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-lg mb-2">Akses Webmail</h3>
+                        <a href="https://mail.hostinger.com/" target="_blank" class="font-mono text-blue-700 hover:underline">mail.hostinger.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Slide 3: Konfigurasi Manual -->
+        <section id="slide-3" class="slide bg-slate-100">
+            <div class="slide-content">
+                <h2 class="text-3xl font-bold mb-6 text-center">Konfigurasi Manual (Untuk Aplikasi)</h2>
+                <p class="text-center text-slate-600 mb-8">Informasi ini akan dibutuhkan saat melakukan setup di aplikasi Mail pada smartphone atau desktop.</p>
+                <div class="overflow-x-auto bg-white rounded-lg shadow-lg">
+                    <table class="w-full text-sm text-left">
+                        <thead class="bg-slate-200 text-xs text-slate-700 uppercase">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">Protokol</th>
+                                <th scope="col" class="px-6 py-3">Host (Server)</th>
+                                <th scope="col" class="px-6 py-3 text-center">Port</th>
+                                <th scope="col" class="px-6 py-3 text-center">Enkripsi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <th scope="row" class="px-6 py-4 font-bold text-slate-900">Incoming (IMAP)</th>
+                                <td class="px-6 py-4 font-mono">imap.hostinger.com</td>
+                                <td class="px-6 py-4 font-mono text-center">993</td>
+                                <td class="px-6 py-4 font-mono text-center">SSL</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="px-6 py-4 font-bold text-slate-900">Outgoing (SMTP)</th>
+                                <td class="px-6 py-4 font-mono">smtp.hostinger.com</td>
+                                <td class="px-6 py-4 font-mono text-center">465</td>
+                                <td class="px-6 py-4 font-mono text-center">SSL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                 <p class="text-center text-slate-600 mt-6 text-sm"><strong>Catatan:</strong> Selalu pilih <strong>IMAP</strong> jika diberi pilihan. IMAP akan menyinkronkan email di semua perangkat secara <i>real-time</i>.</p>
+            </div>
+        </section>
+
+        <!-- Slide 4 & 5: Ganti Password -->
+        <section id="slide-4" class="slide">
+            <div class="slide-content">
+                <h2 class="text-3xl font-bold mb-6 text-center">Langkah Pertama: Ganti Password ini</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="text-slate-600 space-y-4">
+                        <p>Untuk keamanan akun, silakan langsung ganti password awal melalui Webmail.</p>
+                        <ol class="list-decimal list-inside space-y-2 font-semibold">
+                            <li>Buka browser dan kunjungi <a href="https://mail.hostinger.com/" target="_blank" class="text-blue-600 hover:underline">Webmail Hostinger</a>.</li>
+                            <li>Login dengan email dan password awal.</li>
+                            <li>Klik ikon Pengaturan ⚙️ di pojok kanan atas.</li>
+                            <li>Pilih menu "Password".</li>
+                            <li>Masukkan password lama dan baru, lalu simpan.</li>
+                        </ol>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-xl">
+                        <div class="flex items-center space-x-2 mb-4 pb-2 border-b">
+                            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        </div>
+                        <h3 class="font-bold mb-4">Ubah Password</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-sm font-medium text-slate-500">Password Saat Ini</label>
+                                <input type="password" value="Gaianata@123" class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded-md text-sm shadow-sm" disabled>
+                            </div>
+                             <div>
+                                <label class="text-sm font-medium text-slate-500">Password Baru</label>
+                                <input type="password" placeholder="••••••••••" class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded-md text-sm shadow-sm" disabled>
+                            </div>
+                             <div>
+                                <label class="text-sm font-medium text-slate-500">Konfirmasi Password Baru</label>
+                                <input type="password" placeholder="••••••••••" class="mt-1 block w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded-md text-sm shadow-sm" disabled>
+                            </div>
+                            <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Setup Mobile -->
+        <section id="slide-6" class="slide bg-slate-800 text-white">
+            <div class="slide-content text-center">
+                 <img src="https://images.unsplash.com/photo-1603566234384-24a1c0d456ab?q=80&w=1200&auto=format&fit=crop" alt="[Gambar seseorang memegang beberapa ponsel]" class="w-full max-w-lg mx-auto rounded-lg shadow-xl mb-8" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/e2e8f0?text=Setup+Mobile';">
+                <h2 class="text-4xl font-bold mb-3">Setup di Perangkat Mobile</h2>
+                <p class="text-lg text-slate-300 max-w-3xl mx-auto">Akses email kapan saja, di mana saja. Mari hubungkan akun ke aplikasi Mail di iPhone & Android.</p>
+            </div>
+        </section>
+        
+        <!-- Slide 7 & 8: Setup iPhone -->
+        <section id="slide-7" class="slide">
+             <div class="slide-content">
+                <h2 class="text-3xl font-bold mb-8 text-center">Panduan Setup di iPhone / iPad</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <h3 class="font-bold text-xl mb-4">Langkah Pengaturan Awal</h3>
+                        <ol class="list-decimal list-inside space-y-3 text-slate-700">
+                           <li>Buka <strong>Settings (Pengaturan)</strong>.</li>
+                           <li>Scroll dan pilih <strong>Mail</strong>.</li>
+                           <li>Pilih <strong>Accounts (Akun)</strong>.</li>
+                           <li>Pilih <strong>Add Account (Tambah Akun)</strong>.</li>
+                           <li>Pilih <strong>Other (Lainnya)</strong> dari daftar.</li>
+                           <li>Pilih <strong>Add Mail Account (Tambah Akun Mail)</strong>.</li>
+                        </ol>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-xl">
+                        <h3 class="font-bold text-xl mb-4">Detail Akun & Server</h3>
+                        <div class="space-y-3 text-sm">
+                           <p>1. Isi <strong>Nama</strong>, <strong>Email</strong> (`hello@gaianata.id`), dan <strong>Password baru</strong>. Klik Next.</p>
+                           <p>2. Pilih tipe akun <strong>IMAP</strong>.</p>
+                           <p>3. Masukkan detail server IMAP & SMTP dari <a href="#slide-3" class="text-blue-600 hover:underline">slide konfigurasi</a>.</p>
+                           <ul class="list-disc list-inside pl-4 mt-2 bg-slate-50 p-3 rounded-md">
+                               <li><strong>Host Name (Incoming):</strong> `imap.hostinger.com`</li>
+                               <li><strong>Host Name (Outgoing):</strong> `smtp.hostinger.com`</li>
+                               <li><strong>User Name (keduanya):</strong> `hello@gaianata.id`</li>
+                               <li><strong>Password (keduanya):</strong> Password baru</li>
+                           </ul>
+                           <p>4. Klik <strong>Next</strong>, lalu <strong>Save</strong> untuk menyelesaikan.</p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Slide 9 & 10: Setup Android -->
+         <section id="slide-9" class="slide bg-slate-100">
+             <div class="slide-content">
+                <h2 class="text-3xl font-bold mb-8 text-center">Panduan Setup di Android (via Gmail)</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <h3 class="font-bold text-xl mb-4">Langkah Pengaturan Awal</h3>
+                        <ol class="list-decimal list-inside space-y-3 text-slate-700">
+                           <li>Buka aplikasi <strong>Gmail</strong>.</li>
+                           <li>Ketuk ikon profil di kanan atas, pilih <strong>Add another account</strong>.</li>
+                           <li>Pilih <strong>Other (Lainnya)</strong>.</li>
+                           <li>Masukkan alamat email lengkap.</li>
+                           <li>Ketuk <strong>Manual Setup</strong>.</li>
+                           <li>Pilih <strong>IMAP</strong> sebagai tipe akun.</li>
+                        </ol>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-xl">
+                        <h3 class="font-bold text-xl mb-4">Detail Server</h3>
+                        <div class="space-y-3 text-sm">
+                           <p>1. Masukkan <strong>Password baru</strong>, klik Next.</p>
+                           <p>2. Pada <strong>Incoming server settings</strong>, pastikan detailnya benar, klik Next.</p>
+                            <div class="bg-slate-50 p-3 rounded-md">
+                                <p><strong>Server:</strong> `imap.hostinger.com`</p>
+                            </div>
+                           <p>3. Pada <strong>Outgoing server settings</strong>, pastikan detailnya benar, klik Next.</p>
+                            <div class="bg-slate-50 p-3 rounded-md">
+                                <p><strong>SMTP Server:</strong> `smtp.hostinger.com`</p>
+                            </div>
+                           <p>4. Atur opsi sinkronisasi, lalu beri nama pada akun untuk menyelesaikan.</p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Slide 11: Integrasi Gmail -->
+        <section id="slide-11" class="slide">
+             <div class="slide-content text-center">
+                <h2 class="text-4xl font-bold mb-3">Setup Lanjutan: Integrasi Gmail</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Kelola semua email (pribadi dan profesional) dalam satu tempat, langsung dari antarmuka Gmail di komputer.</p>
+                <p class="mt-4 bg-yellow-100 text-yellow-800 px-4 py-2 rounded-md inline-block text-sm"><strong>Penting:</strong> Proses ini harus dilakukan melalui Browser Desktop/Laptop.</p>
+            </div>
+        </section>
+
+        <!-- Slide 12 & 13: Integrasi Gmail Steps -->
+        <section id="slide-12" class="slide bg-white">
+            <div class="slide-content">
+                <h2 class="text-3xl font-bold mb-8 text-center">Cara Mengirim & Menerima Email dari Gmail</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="font-bold text-xl mb-4">Langkah 1: Menambahkan Alamat Email</h3>
+                        <ol class="list-decimal list-inside space-y-3 text-slate-700">
+                           <li>Login ke akun Gmail pribadi di browser.</li>
+                           <li>Buka <strong>Settings ⚙️ &rarr; See all settings</strong>.</li>
+                           <li>Pilih tab <strong>Accounts and Import</strong>.</li>
+                           <li>Di bagian "Send mail as", klik <strong>"Add another email address"</strong>.</li>
+                           <li>Sebuah jendela pop-up akan muncul.</li>
+                        </ol>
+                    </div>
+                    <div>
+                         <h3 class="font-bold text-xl mb-4">Langkah 2: Konfigurasi Server (SMTP)</h3>
+                        <ol class="list-decimal list-inside space-y-3 text-slate-700">
+                           <li>Di pop-up, masukkan nama dan email `hello@gaianata.id`, lalu klik Next.</li>
+                           <li>Isi detail SMTP dari <a href="#slide-3" class="text-blue-600 hover:underline">slide konfigurasi</a> (Server, Username, Password, Port 465, SSL).</li>
+                           <li>Klik <strong>Add Account</strong>.</li>
+                           <li>Gmail akan mengirim email verifikasi ke `hello@gaianata.id`.</li>
+                           <li>Buka Webmail Hostinger, buka email tersebut, dan klik link konfirmasi.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Slide 14: Selesai -->
+        <section id="slide-14" class="slide bg-green-600 text-white">
+            <div class="slide-content text-center">
+                 <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1200&auto=format&fit=crop" alt="[Gambar sebagai simbol kesuksesan]" class="w-full max-w-md mx-auto rounded-lg shadow-xl mb-8" onerror="this.onerror=null;this.src='https://placehold.co/600x400/16a34a/ffffff?text=Selesai!';">
+                <h2 class="text-4xl font-bold mb-3">hello@gaianata sudah siap digunakan.</h2>
+                 <p class="text-lg text-green-100 max-w-3xl mx-auto">Jika mengalami kendala atau memiliki pertanyaan, jangan ragu untuk menghubungi kami ya kak.</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
+
