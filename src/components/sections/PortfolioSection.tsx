@@ -16,26 +16,49 @@ const getFileUrl = (fileRef: string) => {
     return `https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${ref}`;
 }
 
-// --- PERBAIKAN UTAMA ADA DI BARIS INI ---
 const PortfolioSection = ({ data, settings }: { data: any, settings: any }) => {
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
     sources: [] as string[],
   });
 
-  // --- PERBAIKAN: Hapus pengecekan 'settings' dari sini, karena kita tidak menggunakannya ---
   if (!data) return null;
   
   const pdfUrl = data.portfolio_pdf_file?.asset?._ref ? getFileUrl(data.portfolio_pdf_file.asset._ref) : '#';
 
+  // --- FUNGSI DIPERBAIKI DENGAN DEBUGGING ---
   function openLightbox(galleryImages: any[]) {
-    if (!galleryImages || galleryImages.length === 0) return;
-    const imageSources = galleryImages.map(img => urlForImage(img)?.url()).filter((url): url is string => !!url);
+    console.log("Mencoba membuka lightbox untuk galeri:", galleryImages);
+
+    if (!galleryImages || galleryImages.length === 0) {
+      console.log("Batal: Galeri kosong atau tidak ada.");
+      return;
+    }
+
+    const imageSources = galleryImages
+      .map(img => {
+        const url = urlForImage(img)?.url();
+        console.log("Memproses gambar:", img, "-> URL:", url);
+        return url;
+      })
+      .filter((url): url is string => {
+        const isValid = typeof url === 'string' && url.length > 0;
+        if (!isValid) {
+          console.log("Memfilter keluar URL tidak valid:", url);
+        }
+        return isValid;
+      });
+
+    console.log("Sumber gambar yang valid:", imageSources);
+
     if (imageSources.length > 0) {
+      console.log("Membuka lightbox...");
       setLightboxController({
         toggler: !lightboxController.toggler,
         sources: imageSources,
       });
+    } else {
+      console.log("Batal: Tidak ada sumber gambar yang valid untuk ditampilkan.");
     }
   }
 

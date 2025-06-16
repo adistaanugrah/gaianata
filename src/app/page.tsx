@@ -35,7 +35,6 @@ export default async function Home() {
       
       {/* --- PERUBAHAN ADA DI BARIS INI --- */}
       <PortfolioSection data={pageData.portfolio_section} settings={settingsData} />
-      
       <TeamSection data={pageData.team_section} />
       <ContactSection data={pageData.contact_section} settings={settingsData} />
     </>
